@@ -24,7 +24,7 @@ sin(d)
 
 plot(d, sin(d), col = "magenta") # doar grafic
 
-plot(d, sin(d), col = "magenta", ylim = c(-5, 5), xlim = c(0,2)) #limitam graficul pe intrvale
+plot(d, sin(d), col = "magenta", ylim = c(-5, 5), xlim = c(0,2)) #limitam graficul pe intervale
 plot(d, sin(d), col = "magenta",xlim = c(0,5*pi)) #limitam graficul pe intrvale
 
 

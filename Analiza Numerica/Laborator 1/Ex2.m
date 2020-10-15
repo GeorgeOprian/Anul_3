@@ -29,8 +29,9 @@ x(10)
 
 syms xs
 gs=symfun(exp(-xs).*(xs.^2-5.*xs+2)-1,xs);
-x_star=double(solve(gs==0));
 
+x_star=double(solve(gs==0));
+x = -1: 0.0001: 1;
 err_abs=abs(x_star-x);
 
 err_rel=err_abs/abs(x_star);
@@ -47,4 +48,4 @@ loglog(err_abs)
 %% d
 
 x0=0
-fzero(g,x0)
+fzero(gs,x0)
