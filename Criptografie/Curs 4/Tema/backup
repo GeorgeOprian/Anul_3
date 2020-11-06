@@ -1,0 +1,51 @@
+s = "zpgdlrjlajkpylxzpyyglrjgdlrzhzqyjzqrepvmswrzyrigzhzvregkwivssaoltnliuwoldieaqewfiiykhbjowrhdogcqhkwajyaggemisrzqoqhoavlkbjofrylvpsrtgiuavmswlzgmsevwpcdmjsvjqbrnklpcfiowhvkxjbjpmfkrqthtkozrgqihbmqsbivdardymqmpbunivxmtzwqvgefjhucborvwpcdxuwftqmoowjipdsuqmoeavljgqealrktiwvextvkrrgxanidrl"
+
+counter = 0
+salvate = []
+for i in range(0, (len(s) - 2)):
+    curent = s[i: i + 3]
+    if (curent not in salvate):
+        counter += 1
+        gasit = False
+        counterInterior = counter + 2
+        memoCounter = []
+        for j in range(i+3, len(s) - 2):
+            curentInterior = s[j: j + 3]
+            counterInterior += 1
+            if (curent == curentInterior):
+                gasit = True
+                memoCounter.append(counterInterior)
+        if gasit:
+            salvate.append(curent)
+            for i in range(len(memoCounter)):
+                #print (curent + " " + str(memoCounter[i]))
+                print(curent + ": " + str(counter) + ", " + str(memoCounter[i])  + " distanta = " + str(memoCounter[i] - counter))
+            #print(curent + ": " + str(counter) + ", " + str(memoCounter)  + " distanta = " + str(memoCounter - counter))
+
+
+
+
+
+# splited = []
+# for i in range (0, len(s) - 2):
+#     #curent = s[i: i + 3]
+#     splited.append(s[i: i + 3])
+#     #print(curent)
+# print (splited)
+
+# for str1 in splited:
+#     counter = 0
+#     memo = 0
+#     for str2 in splited:
+#         if str1 == str2:
+#             memo = counter
+#         counter += 1
+#     print(str1 + ": " + str(memo))
+
+    
+
+
+
+
+
+

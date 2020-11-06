@@ -1,0 +1,8 @@
+HTML:
+- Taguri semantice
+
+CSS:
+- (media query, unitati relative, tipuri de display)
+- elementContinut, nth-of-type
+- :after :before
+- tranzitii
