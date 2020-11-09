@@ -1,0 +1,41 @@
+Cerinte:
+
+*3 pagini create de student
+*punctaj separat pentru 
+ 1.sensul prezentarii
+ 2.functionarea elementelor
+ 3.intelegerea notiunilor
+*sa contina toate elemente enumerate: 
+
+HTML
+-taguri semantice: 
+    header(V), 
+    nav, 
+    section (V), 
+    article (V), aside, div, span
+-h1,h2,h3, p, img, ol, ul, a, table 
+-meta
+
+ CSS
+-codul CSS in fisier extern
+-selectori: id, clasa, tag, elementContinut, elementCopil, al n-lea copil de tipul unui tag (:nth-of-type), :hover,[atribut*=val]
+-proprietati: width, height, color, background, text-align,vertical-align, font, border, padding, margin, display, visibility, 
+-meniu drop-down, galerie de figuri cu figcaption
+-transform, transition, animation
+
+Css -responsive: 
+-%(width) , em (font-size), vh,vw, media-query (@media) 
+-position(relative, absolute,sticky),z-index
+-stilizare FLEX, GRID (proprietatea display)
+
+Js
+Baza
+-modificare  de proprietati
+-modificare  a stilului unui element 
+-modificare  eveniment (ex: el.onclick)
+-selectare dupa id,tag,clasa,selectorCSS
+-creare si stergere element (createElement si removeChild)
+-inputuri functionale(buton,text,radio,checkbox)
+
+
+
