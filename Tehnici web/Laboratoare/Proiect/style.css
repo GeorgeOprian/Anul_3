@@ -72,40 +72,48 @@ nav li:hover ul {
     margin: 2%;
     padding-left: 3%;
     padding-right: 3%;
+    overflow: auto;
 }
 #intro {
     display: block;
     overflow: auto;
 }
 
-#intro section article {
+#intro section {
     width: 60%;
     height: 50%;
-    /* display: inline-block; */
+    display: inline-block; 
+    
 }
 #HBO_link{
     width: 40%;
     height: 50%;
-    margin: auto;
+    
     float: right; 
-    padding: 0% 0% 0% 15%;
+    margin: auto;
+    margin-top: 5%;
+    padding: auto;
+    /* padding: 0% 0% 0% 15%; */
     /* margin-left: 10%; */
     /* margin-right: auto; */
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
-
-#HBO_link_image {
+#HBO_link img {
     max-width: 70%;
     max-height: 70%;
     /* max-width: 500px;
     max-height: 600px; */
    
-    padding-top: 1em;
-    padding-bottom: 1em;
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
 }
 #intro iframe{
-    width: 500px;
-    height: 700px;
+    width: 50%;
+    
+    display: block;
+    float: left;
 }
 
 /*div {
