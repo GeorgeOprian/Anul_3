@@ -1,11 +1,11 @@
 titlul o sa se mute ascunda cand derulez si ramane menil sticky
 meniu:
     pagina principala
-        o descriere furata de pe IMDB :)
-        trailer 
-        detalii generale despre serial
-        carti
-        George RR Martin
+        o descriere furata de pe IMDB (V)
+        trailer  (V)
+        detalii generale despre serial (V)
+        George RR Martin + carti (V)
+        galerie cu imagini din locuri unde s-a filmat
         Producatori
         Buget total
     sezoane (ar fi misto ca in meniu sub asta cu sezoane sa scrie ca poti sa-ti iei spoilere) 
@@ -16,5 +16,5 @@ meniu:
         actori principali pe fiecare sezon daca se poate
         cat au jucat(in ce sezoane)
         
-    despre producatori si George RR Martin
-    in footer Valar morgulis
+    
+    in footer Valar morgulis (V)

@@ -73,6 +73,7 @@ nav li:hover ul {
     padding-left: 3%;
     padding-right: 3%;
     overflow: auto;
+    font-size: 1em;
 }
 #intro {
     display: block;
@@ -116,15 +117,69 @@ nav li:hover ul {
     float: left;
     margin: auto;
     padding-bottom: 10%;
+    
+}
+#george{
+    margin-bottom: 5%;
+    padding: 2%;
+    width: auto;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size: 1.2em;
 }
 
-/*div {
-    max-width: 5vw;
-    max-width: 3vw;
-    height: 0.5vh;
-    background-color: black;
-    margin: 6px 0;
-    min
-  }
+#george_pic{
+    float: left;
+    width: 30%;
+    height: 30%;
+    padding: 1% 1% 1% 0%;
+}
 
-*/
+#george p {
+    overflow: auto;
+}
+.important_in_p {
+    font-weight: bold; 
+    font-style: italic;
+    font-size: 1.3em;
+}
+
+.highlighted_volume {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium';
+}
+
+
+#a_song_of_ice_and_fire_list {
+    display: inline-block;
+    margin-top: 2.5%;
+
+    /* width: 100%; */
+}
+#a_song_of_ice_and_fire_list h4 {
+    margin: 0%;
+    padding: 0%;
+}
+#a_song_of_ice_and_fire_list ol {
+    margin-left: 5%;
+    padding: 0%;
+    display: inline-block;
+    /* float: left; */
+}
+#content {
+    margin-top: auto; 
+    margin-bottom: auto;
+    display: inline-block;
+    padding: 3em 3em 3em 0em;
+}
+#a_song_book_pic{
+    float: right;
+}
+
+footer {
+    padding: 2vh;
+}
+footer h3{
+    font-family: Georgia, serif;
+    display: inline;
+}

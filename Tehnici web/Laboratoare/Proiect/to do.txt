@@ -2,5 +2,5 @@ Meniu
 on buton click sa-mi arate meniul 
 
 
-
-rezolva problema cu github ul si branch urile
+JS:
+modificaa fundalul cartilor cand esti cu mouse ul pe ele

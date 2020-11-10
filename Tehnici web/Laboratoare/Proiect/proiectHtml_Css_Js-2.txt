@@ -10,23 +10,61 @@ Cerinte:
 HTML
 -taguri semantice: 
     header(V), 
-    nav, 
+    nav, (la meniu)
     section (V), 
-    article (V), aside, div, span
--h1,h2,h3, p, img, ol, ul, a, table 
--meta
+    article (V), 
+    aside, 
+    div, (V)
+    span
+-h1, (V)
+h2,  (V)
+h3, 
+p,  (V)
+img, (V)
+ol, (V)
+ul, (la meniu)
+a,  (V)
+
+table 
+-meta (V)
 
  CSS
--codul CSS in fisier extern
--selectori: id, clasa, tag, elementContinut, elementCopil, al n-lea copil de tipul unui tag (:nth-of-type), :hover,[atribut*=val]
--proprietati: width, height, color, background, text-align,vertical-align, font, border, padding, margin, display, visibility, 
+-codul CSS in fisier extern  (V)
+-selectori: id, (V) 
+clasa,  (V)
+tag, 
+elementContinut, (V)
+elementCopil, 
+al n-lea copil de tipul unui tag (:nth-of-type), 
+:hover,  (la meniu) 
+[atribut*=val]
+-proprietati: width, (V)
+height, (V)
+color, (V) 
+background, 
+text-align,
+vertical-align, 
+font, 
+border,
+padding, (V)
+margin, (V)
+display, 
+visibility, 
 -meniu drop-down, galerie de figuri cu figcaption
 -transform, transition, animation
 
 Css -responsive: 
--%(width) , em (font-size), vh,vw, media-query (@media) 
--position(relative, absolute,sticky),z-index
--stilizare FLEX, GRID (proprietatea display)
+-%(width), (V)
+em (font-size), (V)
+vh, (V) 
+vw, 
+media-query (@media) 
+-position(relative, 
+ absolute, 
+ sticky), (la meniu)
+ z-index
+-stilizare FLEX, 
+GRID (proprietatea display)
 
 Js
 Baza
