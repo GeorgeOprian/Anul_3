@@ -1,0 +1,19 @@
+Proprietea position
+- static (implicita) = ordinea implicita primita de elemente
+                     -nu e afectat de top,left,right,bottom
+-fixed = fixat fata de fereastra -nu e afectat de scroll
+	   - nu se pastreaza spatiul
+-relative = fata de pozitionarea statica
+		  -se pastreaza spatiul rezervat initial
+-absolute= fata pe primul continator (parinte, bunic, etc) care este pozitionat diferit de static
+           iar daca acesta nu exista -fata de fereastra
+          -nu se pastreaza spatiul
+-sticky= relative pana scroll-ul ajunge la pozitia elementului apoi fixed la pozitia specificat
+-z-index este distanta pe axa 0z a obiectului - acopera elemente cu z-index mai mic care se afla pe aceleasi coordonate (din planul x0y)
+
+
+Media query= stilizare diferita pentru conditii diferite (dimensiune ecran, etc) 
+   Sintaxa : @media mediaQ1, mediaQ2 { stilizareCss } 
+             mediaQ poate fi:   tipM  and (propM1:val1) and (propM2:val2).. 
+                                           sau
+                                       not tipM  and (propM:val) ...

@@ -1,3 +1,7 @@
+body{
+    background-color: #171717;
+}
+
 header{
     margin-bottom: 2%;
     margin: 2%;
@@ -88,11 +92,10 @@ nav li:hover ul {
 }
 #HBO_link{
     width: 40%;
-    height: 50%;
-    
+    height: 100%;
     float: right; 
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
     padding: auto;
     /* padding: 0% 0% 0% 15%; */
     /* margin-left: 10%; */
@@ -102,8 +105,8 @@ nav li:hover ul {
 }
 
 #HBO_link img {
-    max-width: 90%;
-    max-height: 70%;
+    width: 90%;
+    height: 100%;
     /* max-width: 500px;
     max-height: 600px; */
    
@@ -111,10 +114,9 @@ nav li:hover ul {
     padding-bottom: 1em; */
 }
 #intro iframe{
-    width: 43em;
-    height: 25em;
-    display: block;
-    float: left;
+    width: 50vw;
+    height: 60vh;
+    display: inline-block;
     margin: auto;
     padding-bottom: 10%;
     
@@ -170,10 +172,36 @@ nav li:hover ul {
     margin-top: auto; 
     margin-bottom: auto;
     display: inline-block;
-    padding: 3em 3em 3em 0em;
+    padding: 3vh 3vw 3vh 0vw;
+}
+#content span{
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium';
 }
 #a_song_book_pic{
     float: right;
+}
+
+#stats h3 span{
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 1.5em;
+    color: #ffff1a;
+}
+#stats table, th, td {
+    border: 0.5px solid;
+}
+table thead :nth-child(1){
+    background: #2b75ca;
+}
+
+tr:nth-of-type(even){
+    background: #65a1e6;
+}
+td, th{
+    text-align: center; 
+    vertical-align: middle;
 }
 
 footer {
@@ -182,4 +210,7 @@ footer {
 footer h3{
     font-family: Georgia, serif;
     display: inline;
+}
+footer span {
+    font-style: italic
 }

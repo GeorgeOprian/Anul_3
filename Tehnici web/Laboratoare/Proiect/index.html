@@ -11,10 +11,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body style="background-color: #171717">
-    <!-- <img src="game-of-thrones-power-ranking.jpg" alt="Header image"> -->
-    <!--<img src="https://fontmeme.com/permalink/201105/67d74718ee1abe44f488833f2b9d8846.png" 
-    alt="game-of-thrones-font" border="0">-->
+<body>
+    
 
     <header> <!--meniu si titlu-->
     
@@ -27,9 +25,9 @@
         <br>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Seasons</li>
-                <li>Actors</li>
+                <a href="index.html"><li>Home</li></a>
+                <a href="actors.html"><li>Actors</li></a>
+                <a href="gallery.html"><li>Gallery</li></a>
                 
                 <!-- <li><h3>Home</h3></li>
                 <li><h3>Seasons</h3></li>
@@ -49,7 +47,6 @@
             </div>
             
             <section> 
-                 <!-- sectiunea sa pluteasca peste backgroud ca sa para mai misto si margini rotunjite  -->
                  <h1>Intro</h1>
                 <article>
                     <h1>About the show</h1>
@@ -75,7 +72,7 @@
             <div id = "a_song_of_ice_and_fire_list">
                 
                 <div id = "content">
-                    <h4><span style = "font-weight: bold; font-style: italic; font-family: 'Franklin Gothic Medium'">A Song of Ice and Fire volumes:</span> </h4>
+                    <h4><span>A Song of Ice and Fire volumes:</span> </h4>
                     <ol>
                         <li>A Game of Thrones (1996)</li>
                         <li>A Clash of Kings (1998)</li>
@@ -91,24 +88,71 @@
             </div>
 
         </div>
-        <!-- <ul style="list-style-type: none; border: 1px;
-        border-style: solid;
-        border-color: red; display:block">
-            <li style="border: 1px;
-            border-style: solid;
-            border-color: green;">Ana</li>
-            <li>Ioana</li>
-            <li>Oana</li> -->
-        
-    </main>
 
-    
-    <!--pastreaza putin spaiu sus ca arata blana cu putina diferenta sus-->
+        <div id = "stats" class = "main">
+            <h2>Some stats about the show</h2>
+            <h3>Overall IMDB grade: <span>9.3 </span>/ 10</h3>
+            <div id = "table_of_stats">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Season</th>
+                            <th>Number of Episodes</th>
+                            <th>Budget</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>10</td>
+                            <td>~$60 million</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>10</td>
+                            <td>~$69 million</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>10</td>
+                            <td>~$50 million</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>10</td>
+                            <td>~$50 million</td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>10</td>
+                            <td>~$50 million</td>
+                        </tr>
+                        <tr>
+                            <td>6.</td>
+                            <td>10</td>
+                            <td>~$100 million</td>
+                        </tr>
+                        <tr>
+                            <td>7.</td>
+                            <td>7</td>
+                            <td>~$100 million</td>
+                        </tr>
+                        <tr>
+                            <td>8.</td>
+                            <td>6</td>
+                            <td>~$90 million</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
 
     <footer class = "main">
         <h3>Valar Morghulis</h3>
         <q>Jaqen H'ghar</q>
-        <span style="font-style: italic">Season 2; Episode 10</span>
+        <span >Season 2; Episode 10</span>
     </footer>
 </body>
 

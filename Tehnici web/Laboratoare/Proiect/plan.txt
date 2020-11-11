@@ -5,16 +5,20 @@ meniu:
         trailer  (V)
         detalii generale despre serial (V)
         George RR Martin + carti (V)
-        galerie cu imagini din locuri unde s-a filmat
-        Producatori
-        Buget total
-    sezoane (ar fi misto ca in meniu sub asta cu sezoane sa scrie ca poti sa-ti iei spoilere) 
+        Buget total tabel pe fiecare sezon (V)
+    sezoane si actori(ar fi misto ca in meniu sub asta cu sezoane sa scrie ca poti sa-ti iei spoilere) 
         descriere scurta pe fiecare sezon
         buget pe fiecare sezon
         cand sunt cu mouse ul pe un sezon sa-mi arate descrierea(sau un buton pentru asta si JS)
-    actori
+        actori
         actori principali pe fiecare sezon daca se poate
         cat au jucat(in ce sezoane)
-        
+
+    galerie cu imagini din locuri unde s-a filmat
+        imagini de la filmari pe sezoane
+        poate cu un hover la buton pentru fiecare sezon
     
     in footer Valar morgulis (V)
+
+    meniu drop down cu sezoane si la fiecare sezon din lista sa te duca pe pagina sezonului de pe imbdb
+

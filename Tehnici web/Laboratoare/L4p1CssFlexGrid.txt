@@ -1,0 +1,51 @@
+//Detalii -in CURS  si pe www.w3schools.com
+1.FLEX-box considera un CONTAINER ce contine ITEM-uri
+*proprietati container:
+	 -display- flex -container de latimea parintelui / inline-flex -mai multe containere pe linie
+	 -flex-direction -row -(implicit) -elementele puse pe linii/ column-elementele puse pe coloane/..
+	 -flex-wrap -nowrap-(implicit)-elementele pe o singura linie (sau coloana) indiferent de spatiu/
+	            -wrap-liniile (sau coloanele) se rup daca nu e spatiu suficient
+   +proprietati alinieri (valorile in curs/referinte)
+   	-justify-content -pe axa pricipala
+   	-align-items -pe axa secundara
+   	-align-content-alinierea liniilor(coloanelor) pe axa secundara
+*proprietati itemuri-
+ 	-order (implicit 0) = ordinea in care apar item-urile (primele cu 0, apoi cu 1, cu 2, ...)
+ 	-flex-grow (implicit 0) = nr de parti cu care isi poate mari dimensiunea -cand spatiul permite
+	-flex-shrink (implicit 1) = nr de parti cu care se poate micsora -daca nu e suficient spatiu
+	-flex-basis (implicit auto) = dimensiunea initiala  
+ 	+ aliniere: align-self
+ 	(Atentie! -alinierile sunt importante - align-items si align-content au implicit valoarea stretch)
+
+
+2. GRID considera un CONTAINER ce contine ITEM-uri 
+*proprietati container
+	-display : grid -container de latimea parintelui / inline-grid -mai multe containere pe linie
+	-grid-template-columns= specifica dimensiunile coloanelor  (in px, %, auto,  ) in forma: col1 col2...
+	-grid-template-rows=specifica dimensiunile liniilor (in px, %, auto,  ) in forma: lin1 lin2 ..
+         
+  Alinieri
+    -justify-content=aliniere coloane
+    -align-content=aliniere linii
+    -justify-items=aliniere pe linie
+    -align-items= aliniere pe coloana
+  Spatii egale	
+	-grid-column-gap=spatiul dintre coloane
+	-grid-row-gap= spatiul dintre linii
+*proprietati itemuri
+  	grid-row-start =linia de la care incepe item-ul (se incepe cu linia1, linia2..., resp col1, col2,..):
+	grid-row-end = linia la care se termina item-ul
+
+  	grid-column-start =coloana de la care incepe item-ul 
+	grid-column-end = coloana la care se termina item-ul
+
+   Prescurtari:    
+	grid-row : linieStart/linieEnd  sau linieStart/ span nrLinii
+	grid-column : coloanaStart/coloanaEnd  sau coloanaStart/ span nrColoane
+	grid-area: linieStart/ coloanaStart / linieEnd / coloanaEnd
+   Alinieri:
+    justify-self=alinierea pe orizontala
+    align-self=alinierea pe verticala
+
+
+

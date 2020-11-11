@@ -80,6 +80,8 @@ fGama <-  function (f) {
 
 fGama(fg)
 
+
+
 #Tema creati o functie in R numita gama_nume care sa implementeze proprietatile
 #pe care le are functia gama(vezi documentul Integrale euleriene) si sa 
 #foloseasca apelul functiei integrate doar atunci cand parametrul nu satisface 
@@ -96,3 +98,7 @@ fGama(fg)
 #Tema : de implementat o functie care genereaza n valori dintr-o v.a. repartizata
 #Poisson de parametru lambda
 #+de demonstrat relatia de recurenta de la Poisson din pdf-ul Lab4 Simulare
+
+
+
+

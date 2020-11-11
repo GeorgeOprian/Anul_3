@@ -9,47 +9,21 @@ Cerinte:
 
 HTML
 -taguri semantice: 
-    header(V), 
     nav, (la meniu)
-    section (V), 
-    article (V), 
     aside, 
-    div, (V)
-    span
--h1, (V)
-h2,  (V)
-h3, 
-p,  (V)
-img, (V)
-ol, (V)
-ul, (la meniu)
-a,  (V)
-
-table 
--meta (V)
+    ul, (la meniu)
 
  CSS
--codul CSS in fisier extern  (V)
--selectori: id, (V) 
-clasa,  (V)
-tag, 
-elementContinut, (V)
+-selectori: 
+
 elementCopil, 
-al n-lea copil de tipul unui tag (:nth-of-type), 
+ 
 :hover,  (la meniu) 
 [atribut*=val]
--proprietati: width, (V)
-height, (V)
-color, (V) 
-background, 
-text-align,
-vertical-align, 
-font, 
-border,
-padding, (V)
-margin, (V)
-display, 
+-proprietati: 
+
 visibility, 
+
 -meniu drop-down, galerie de figuri cu figcaption
 -transform, transition, animation
 
