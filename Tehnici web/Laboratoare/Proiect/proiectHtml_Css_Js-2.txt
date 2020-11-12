@@ -28,9 +28,7 @@ visibility,
 -transform, transition, animation
 
 Css -responsive: 
--%(width), (V)
-em (font-size), (V)
-vh, (V) 
+
 vw, 
 media-query (@media) 
 -position(relative, 

@@ -28,57 +28,42 @@ nav{
     display: inline-block;  
     border-radius: 5px;
     text-align: center;
-    /* padding-left: auto;
-    padding-right: auto; */
-
 }
 
 nav ul{
-    /* padding-right: 10%; */
     list-style-type: none;
-    /* margin-left: 0%; */
-    /* padding-left: auto;
-    padding-right: auto; */
     margin: 0 auto;
     border: 1px;
     border-style: solid;
-    border-color: red;
-    
-    
+    border-color: red; 
 }
 ul li{
     
     border: 1px;
     border-style: solid;
     border-color: green;
-    /* margin-right: auto; */
 }
 nav ul li h3{
     display: inline;
-    /* padding-right: 10%; */
-    
 }
-
-/* nav li ul{
-    visibility: ;
-} */
   
 nav li:hover ul {
     visibility: visible;
 }
 
-
 .main{
     background-color:  #BFBFBF    ;
     border-radius: 7px;
-    /*height: max-height;
-    width: max-width;*/
     margin: 2%;
     padding-left: 3%;
     padding-right: 3%;
     overflow: auto;
     font-size: 1em;
+    /* position: relative; daca am pozitia asta pot sa imi asez divul sa pluteasca peste main, altfel  ar pluti peste toata pagina*/ 
 }
+
+/* Home start */
+
 #intro {
     display: block;
     overflow: auto;
@@ -97,25 +82,16 @@ nav li:hover ul {
     margin: auto;
     margin-top: 10%;
     padding: auto;
-    /* padding: 0% 0% 0% 15%; */
-    /* margin-left: 10%; */
-    /* margin-right: auto; */
-    /* margin-left: auto;
-    margin-right: auto; */
 }
 
 #HBO_link img {
     width: 90%;
     height: 100%;
-    /* max-width: 500px;
-    max-height: 600px; */
-   
-    /* padding-top: 1em;
-    padding-bottom: 1em; */
 }
 #intro iframe{
     width: 50vw;
     height: 60vh;
+    max-width: auto;
     display: inline-block;
     margin: auto;
     padding-bottom: 10%;
@@ -155,8 +131,6 @@ nav li:hover ul {
 #a_song_of_ice_and_fire_list {
     display: inline-block;
     margin-top: 2.5%;
-
-    /* width: 100%; */
 }
 #a_song_of_ice_and_fire_list h4 {
     margin: 0%;
@@ -166,7 +140,6 @@ nav li:hover ul {
     margin-left: 5%;
     padding: 0%;
     display: inline-block;
-    /* float: left; */
 }
 #content {
     margin-top: auto; 
@@ -203,6 +176,23 @@ td, th{
     text-align: center; 
     vertical-align: middle;
 }
+
+/* Home end */
+
+/* Gallery start*/
+/* body > div:nth-of-type(1) {
+    width: 100px;
+    height: 70px;
+    background-color: aqua;
+    /* position: absolute; */
+    /*e bagat in flow ul documentului*/ 
+    /* position: fixed;  */
+    /* elementul pluteste peste pagina la scroll */
+    /* left: 20px;
+    top: 100px;
+}  */
+
+/* Gallery end*/
 
 footer {
     padding: 2vh;

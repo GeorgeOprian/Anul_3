@@ -1,0 +1,67 @@
+#Lucru cu metoda respingerii
+#Repartitia uniforma
+#Reamintim repartitia uniforma pe (a,b)
+#f(x)=1/(b-a), x in intervalul (a,b)
+a <- 0
+b <- 1
+t <- seq(-3,3,0.001)
+plot(t,dunif(t,a,b),col="red")
+a <- -1
+b <- 1
+plot(t,dunif(t,a,b),col="red")
+
+#Aplicam metoda respingerii pentru exemplul din Lab6-312
+#Scrieti o functie care genereaza o valoare din repartitia de mai sus
+f_respingere <-function()
+{
+  #folosim variabila booleana ok ca "variabila semafor" pentru iesirea din bucla
+  ok <- F
+  #k este contorul pentru nr de iteratii necesare pentru generarea lui x
+  k <- 0
+  while(ok==F)
+  {
+    y <- runif(1,0.8,1)
+    u <- runif(1)
+    if(u<=125*y*(1-y)^3) {
+                          x <- y
+                          ok <- T
+                          }
+    k <- k+1
+  }
+  
+  return(c(x,k))
+}
+f_respingere()
+
+#Sa scrie o functie care genereaza n valori din repartitia de mai sus
+
+f_respingere_n <- function(n)
+{ 
+  x <- c()
+  k <- c()
+  for(i in 1:n) {
+                 a <- f_respingere()
+                 x <- c(x,a[1])
+                 k <- c(k,a[2])
+                 }
+  #vom concatena cu functia rbind()
+  return(rbind(x,k))
+}
+m <- f_respingere_n(10^4)
+m[,1:5]
+x <- m[1,]
+k <- m[2,]
+medie_incercari <- sum(k)/10^4
+hist(x)
+
+#Sa se scrie o functie care se comporta ca densitatea de mai sus
+f1 <- function(x)
+{
+  10^6/336*x*(1-x)^3
+}
+t <- seq(0.8,1,0.001)
+hist(x,freq=F,col="green")
+lines(t,f1(t),col="red")
+
+#TEMA: Rescrieti functia de mai sus astfel incat sa nu se mai bazeze pe apelul 
+#functiei f_respingere
