@@ -1,5 +1,6 @@
 body{
     background-color: #171717;
+    font-family: sans-serif;
 }
 
 header{
@@ -55,8 +56,7 @@ nav li:hover ul {
     background-color:  #BFBFBF    ;
     border-radius: 7px;
     margin: 2%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 3%;
     overflow: auto;
     font-size: 1.2em;
     /* position: relative; daca am pozitia asta pot sa imi asez divul sa pluteasca peste main, altfel  ar pluti peste toata pagina*/ 
@@ -77,17 +77,17 @@ nav li:hover ul {
 }
 #HBO_link{
     width: 40%;
-    height: 100%;
+    height: 60%;
     float: right; 
-    margin: auto;
-    margin-top: 10%;
-    padding: auto;
+    margin-top: 5%;
+    padding-left: 5%;
 }
 
 #HBO_link img {
     width: 90%;
-    height: 100%;
+    height: 70%;
     display: block;
+    object-fit: cover;
 }
 #intro iframe{
     width: 50vw;
@@ -102,14 +102,26 @@ nav li:hover ul {
 }
 #the_game_begins {
     display: inline-block;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     /* margin-left: auto;
     margin-right: auto; */
-    padding-left: auto;
-    padding-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media screen and (max-width: 925px){
+@media screen and (min-width: 925px){
+    #the_game_begins{
+        width: 60vw;
+        padding-left: auto;
+        padding-right: auto;
+    }
+    #the_game_begins iframe{
+        width: 100%;
+    }
+}
+
+
+/* @media screen and (max-width: 925px){
     #intro iframe{
         width: 85vw;
     }
@@ -125,8 +137,8 @@ nav li:hover ul {
         position: relative;
         left: 0%;
     } 
-    /* problema la asta */
-}
+    
+} */
 #george{
     margin-bottom: 5%;
     padding: 2%;
@@ -210,22 +222,28 @@ td, th{
     vertical-align: middle;
 }
 
-/* Home end */
+/* .jon_snow aside{
+    float: right;
+    width: 50%;
+    clear: right;
+}
+.jon_snow aside p span{
+    font-weight: bold; 
+    font-style: italic;
+} */
 
-/* Gallery start*/
-/* body > div:nth-of-type(1) {
-    width: 100px;
-    height: 70px;
-    background-color: aqua;
-    /* position: absolute; */
-    /*e bagat in flow ul documentului*/ 
-    /* position: fixed;  */
-    /* elementul pluteste peste pagina la scroll */
-    /* left: 20px;
-    top: 100px;
-}  */
 
-/* Gallery end*/
+/* .daenerys aside{
+    float: left;
+    width: 50%;
+}
+
+.daenerys aside p span{
+    font-weight: bold; 
+    font-style: italic;
+    float: ;
+} */
+
 
 footer {
     padding: 2vh;
@@ -236,4 +254,10 @@ footer h3{
 }
 footer span {
     font-style: italic
+}
+aside {
+    display: inline;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #171717;
 }

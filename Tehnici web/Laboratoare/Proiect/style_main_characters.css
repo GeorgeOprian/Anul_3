@@ -1,0 +1,62 @@
+/* Actors start */
+.jon_danny{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    text-align: justify;
+}
+.jon_danny figure{
+    display: flex;
+    width: 45%;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    align-items: center;
+}
+
+.jon_snow figure{
+    float: left;
+    margin-right: 20px;
+
+}
+.jon_danny img{
+    width: 100%;
+    height: auto;
+}
+
+.jon_danny p {
+    margin-top: 0;
+}
+
+.daenerys figure{
+    float: right;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px){
+    .character-content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .character-content figure {
+        width: 90%;
+        height: 50%;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .jon_danny figure{
+        margin-bottom: 5px;
+    }
+
+    .jon_danny img {
+        height: 80%;
+        width: 60%;
+        align-self: center;
+    }
+
+    
+}

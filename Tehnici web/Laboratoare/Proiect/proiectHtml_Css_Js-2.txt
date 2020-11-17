@@ -10,19 +10,15 @@ Cerinte:
 HTML
 -taguri semantice: 
     nav, (la meniu)
-    aside, 
     ul, (la meniu)
 
  CSS
 -selectori: 
-
-elementCopil, 
- 
 :hover,  (la meniu) 
-[atribut*=val]
+[atribut*=val]   (la link)
 -proprietati: 
 
-visibility, 
+visibility, (la meniu cred)
 
 -meniu drop-down, galerie de figuri cu figcaption
 -transform, transition, animation
@@ -35,7 +31,7 @@ media-query (@media)
  absolute, 
  sticky), (la meniu)
  z-index
--stilizare FLEX, 
+
 GRID (proprietatea display)
 
 Js
@@ -45,7 +41,7 @@ Baza
 -modificare  eveniment (ex: el.onclick)
 -selectare dupa id,tag,clasa,selectorCSS
 -creare si stergere element (createElement si removeChild)
--inputuri functionale(buton,text,radio,checkbox)
+-inputuri functionale(buton,text,radio,checkbox) 
 
 
 

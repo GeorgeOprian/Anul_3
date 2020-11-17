@@ -1,0 +1,90 @@
+/* align items */
+.flex{
+    display: flex;
+    border: 1px solid blue;
+    height: 300px;
+    background-color: blue;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 500px;
+}
+
+.col{
+    flex-basis: 20%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #8c1515;
+    color: #fff;
+    border: 1px solid white;
+    height: 150px;
+}
+
+
+.col1{ 
+    height: 50px;
+    align-self: center;
+}
+.col2{ 
+    height: 250px;
+    align-self: flex-end;
+}
+.col3{ 
+    height: 125px;
+    align-self: baseline;
+}
+.col4{ 
+    height: auto;
+    align-self: stretch;
+}
+
+/* align items */
+
+/*    
+.row{
+    display: flex;
+    flex-direction: row;
+    margin: 10px; 
+    flex-wrap: wrap;
+}
+.col{
+    border: 1px solid blue;
+    flex-grow: 0;
+    flex-shrink: 0;
+} */
+
+/* .col1 {
+    flex-basis: 50%;
+} */
+
+/* .col2{
+    flex-basis: 50%;
+    flex-grow: 0;
+} */
+
+/* .col3{
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+} */
+
+/* flex-wrap daca linia e prea lunga o pune urmatorul div pe urmatoarea linie */
+
+.box{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    text-align: center;
+
+    width: 300px;
+    height: 300px;
+    margin: 50px auto 0;
+    background-color: #8c1515;
+    color: #fff;
+}
+
+ 

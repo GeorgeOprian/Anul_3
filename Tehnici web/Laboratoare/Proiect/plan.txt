@@ -14,7 +14,7 @@ meniu:
         actori principali pe fiecare sezon daca se poate
         cat au jucat(in ce sezoane)
 
-    galerie cu imagini din locuri unde s-a filmat
+    galerie cu imagini din locuri unde s-a filmat se face cu grid
         imagini de la filmari pe sezoane
         poate cu un hover la buton pentru fiecare sezon
     

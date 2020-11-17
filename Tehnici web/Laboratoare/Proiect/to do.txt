@@ -1,8 +1,12 @@
 Galerie
 Meniu
 
-Actori
-De reparat cacatul ala de poza la a song of ice and fire
+#######################
+box-sizing: border-box;
+verifca imaginile sa fie
+width 100%
+height: auto (mai mult sau mai putin)
+#######################
 
 
 Meniu
@@ -11,3 +15,9 @@ on buton click sa-mi arate meniul
 
 JS:
 modificaa fundalul cartilor cand esti cu mouse ul pe ele
+
+
+
+Videoclipuri
+responsive images
+responsive iframes

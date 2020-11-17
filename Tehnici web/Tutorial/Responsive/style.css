@@ -127,11 +127,10 @@ body{
         background-color: blue;
     }
 }
-
+ 
 
 
 @media (max-width: 768px){
-
 
     .body,
     .footer{
@@ -157,17 +156,15 @@ body{
     .left-column {order: 2;}
     .right-column {order: 3;}
 
-    .adv{
-        display: none;
-    }
+
 }
 
-@media (max-width: 640px){
-    /* intre telefon si tableta */
+/* intre telefon si tableta */
+/* @media (max-width: 640px){
     #test{
         background-color: green;
     }
-}
+} */
 
 
 @media (max-width: 425px){
