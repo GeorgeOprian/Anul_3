@@ -26,11 +26,13 @@ header img{
 #menu_icon{
     display: inline-block;
 }
+
 nav{
     background-color: #BFBFBF;
     display: inline-block;  
     border-radius: 5px;
     text-align: center;
+    
 }
 
 nav ul{
@@ -39,9 +41,11 @@ nav ul{
     border: 1px;
     border-style: solid;
     border-color: red; 
+    padding-left: 0;
+    display: inline-block;
 }
+
 ul li{
-    
     border: 1px;
     border-style: solid;
     border-color: green;
@@ -52,6 +56,13 @@ nav ul li h3{
   
 nav li:hover ul {
     visibility: visible;
+}
+
+
+
+#dropdown_list{
+    z-index: 1;
+    display: inline-block;;
 }
 
 .main{

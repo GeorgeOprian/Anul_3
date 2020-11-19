@@ -16,12 +16,12 @@ HTML
 -selectori: 
 :hover,  (la meniu) 
 [atribut*=val]   (la link)
+
 -proprietati: 
 
 visibility, (la meniu cred)
 
 -meniu drop-down, 
-galerie de figuri cu figcaption cu GRID
 -transform, transition, animation
 
 Css -responsive: 
