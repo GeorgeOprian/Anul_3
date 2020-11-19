@@ -11,7 +11,7 @@ while norm(A*x_old-b)>TOL && ITMAX>=i
     i=i+1;
 %     x(1)=
     for j=1:n
-        x(j)=(b(j)-A(j,1:j-1)*x_old(1:j-1)-A(j,j+1:n)*x_old(j+1:n))/A(j,j);
+        x(j) = (b(j)-A(j,1:j-1)*x_old(1:j-1)-A(j,j+1:n)*x_old(j+1:n))/A(j,j);
     end
 %     x(n)=
     x_old=x;

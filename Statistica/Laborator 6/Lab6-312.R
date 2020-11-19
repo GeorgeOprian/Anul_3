@@ -23,9 +23,9 @@ f_respingere <-function()
     y <- runif(1,0.8,1)
     u <- runif(1)
     if(u<=125*y*(1-y)^3) {
-                          x <- y
-                          ok <- T
-                          }
+      x <- y
+      ok <- T
+    }
     k <- k+1
   }
   
@@ -63,5 +63,7 @@ t <- seq(0.8,1,0.001)
 hist(x,freq=F,col="green")
 lines(t,f1(t),col="red")
 
+
 #TEMA: Rescrieti functia de mai sus astfel incat sa nu se mai bazeze pe apelul 
 #functiei f_respingere
+
