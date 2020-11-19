@@ -11,7 +11,7 @@ HTML
 -taguri semantice: 
     nav, (la meniu)
     ul, (la meniu)
-
+    
  CSS
 -selectori: 
 :hover,  (la meniu) 
@@ -20,19 +20,16 @@ HTML
 
 visibility, (la meniu cred)
 
--meniu drop-down, galerie de figuri cu figcaption
+-meniu drop-down, 
+galerie de figuri cu figcaption cu GRID
 -transform, transition, animation
 
 Css -responsive: 
 
 vw, 
-media-query (@media) 
--position(relative, 
- absolute, 
- sticky), (la meniu)
+-position( sticky), (la meniu)
  z-index
 
-GRID (proprietatea display)
 
 Js
 Baza

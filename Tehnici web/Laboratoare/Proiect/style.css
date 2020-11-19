@@ -1,6 +1,8 @@
 body{
     background-color: #171717;
     font-family: sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
 }
 
 header{
@@ -58,15 +60,22 @@ nav li:hover ul {
     margin: 2%;
     padding: 3%;
     overflow: auto;
-    font-size: 1.2em;
     /* position: relative; daca am pozitia asta pot sa imi asez divul sa pluteasca peste main, altfel  ar pluti peste toata pagina*/ 
+}
+
+@media (max-width: 768px){
+    body{
+        font-size: 1em;
+    }
 }
 
 /* Home start */
 
 #intro {
-    display: block;
+    display: flex;
     overflow: auto;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #intro section {
@@ -80,6 +89,7 @@ nav li:hover ul {
     height: 60%;
     float: right; 
     margin-top: 5%;
+    margin-bottom: 10px;
     padding-left: 5%;
 }
 
@@ -89,56 +99,43 @@ nav li:hover ul {
     display: block;
     object-fit: cover;
 }
-#intro iframe{
-    width: 50vw;
-    height: 60vh;
-    max-width: auto;
-    display: inline-block;
-    margin: auto;
-    /* padding-bottom: 10%;   */
-    padding-left: auto;
-    padding-right: auto;
 
-}
 #the_game_begins {
-    display: inline-block;
-    /* margin-top: 10%; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: auto;
+    width: 60%;
 }
 
-@media screen and (min-width: 925px){
+@media (max-width: 768px){
     #the_game_begins{
-        width: 60vw;
-        padding-left: auto;
-        padding-right: auto;
-    }
-    #the_game_begins iframe{
-        width: 100%;
+        width: 90%;
     }
 }
 
+.video-container{
+    position: relative;
+    height: 0;
+    width: 90%;
+    overflow: hidden;
+    padding: 0;
+}
 
-/* @media screen and (max-width: 925px){
-    #intro iframe{
-        width: 85vw;
-    }
-    .main {
-        font-size: 1em;
-    }
-    h1, h2, h3, h4, p, span {
-        font-size: 1em;
-    }
-    #a_song_book_pic{
-        display: block;
-        float: right;
-        position: relative;
-        left: 0%;
-    } 
-    
-} */
+.video-container-16x9{
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 #george{
     margin-bottom: 5%;
     padding: 2%;
@@ -154,11 +151,6 @@ nav li:hover ul {
     padding: 1% 1% 1% 0%;
 }
 
-#george p {
-    
-    /* overflow: auto; */
-    text-align: justify;
-}
 .important_in_p {
     font-weight: bold; 
     font-style: italic;
@@ -172,8 +164,11 @@ nav li:hover ul {
 
 
 #a_song_of_ice_and_fire_list {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2.5%;
+    flex-direction: row;
 }
 #a_song_of_ice_and_fire_list h4 {
     margin: 0%;
@@ -184,22 +179,38 @@ nav li:hover ul {
     padding: 0%;
     display: inline-block;
 }
-#content {
+#list_content {
     margin-top: auto; 
     margin-bottom: auto;
-    display: inline-block;
+    /* display: inline-block; */
     padding: 3vh 3vw 3vh 0vw;
+    display: inline-block;
 }
-#content span{
+
+#list_content span{
     font-weight: bold;
     font-style: italic;
     font-family: 'Franklin Gothic Medium';
 }
 #a_song_book_pic{
-    float: right;
-    position: relative;
-    left: 40%;
+    /* float: right; */
+    flex-grow: 0;
+    flex-shrink: 0;
 }
+
+@media screen and (max-width: 600px){
+    #a_song_of_ice_and_fire_list{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* @media (min-width: 425) and (max-width: 768px){
+    #a_song_book_pic {
+        height: ;
+    }
+} */
+
 
 #stats h3 span{
     font-style: italic;

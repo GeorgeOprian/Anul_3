@@ -1,11 +1,32 @@
-body > div:nth-of-type(1) {
-    width: 100px;
-    height: 70px;
-    background-color: aqua;
-    position: absolute;
-    /*e bagat in flow ul documentului*/ 
-    /* position: fixed;  */
-    /* elementul pluteste peste pagina la scroll */
-    left: 20px;
-    top: 100px;
-} 
+.gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2%;
+}
+
+.gallery figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: center; */
+    width: 350px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+figure figcaption {
+    font-size: 0.75em;
+    align-self: flex-end;
+    text-align: justify;
+    padding-top: 5px;
+}
+
+
+
