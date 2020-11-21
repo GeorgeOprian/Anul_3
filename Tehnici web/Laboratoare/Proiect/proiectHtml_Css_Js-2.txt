@@ -12,22 +12,15 @@ HTML
 
     
  CSS
--selectori: 
-[atribut*=val]   (la link)
 
 -proprietati: 
 
-visibility, (la meniu cred)
+visibility, (o bag pe js la o imagine, gen sa am un buton pe care sa scrie "Press here to see an image")
 
--
-transition, animation
+- animation
 
 Css -responsive: 
-
 vw, 
--position( sticky), (la meniu)
- z-index
-
 
 Js
 Baza

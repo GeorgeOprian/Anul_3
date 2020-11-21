@@ -288,6 +288,13 @@ nav{
     font-weight: bold; 
     font-style: italic;
     font-size: 1.3em;
+    transition-duration: 2s;
+    transition-property: font-size;
+
+}
+
+.important_in_p:hover{
+    font-size: 20px;
 }
 
 .highlighted_volume {
@@ -329,15 +336,17 @@ nav{
     /* float: right; */
     flex-grow: 0;
     flex-shrink: 0;
-    transition: width .35s ease-in-out;
+}
+
+/* #a_song_book_pic img {
+    transition: width 2s ease-in-out;
 }
 
 #a_song_book_pic:hover img{
-    width: 150px;
+    width: 500px;
     height: auto;
-    
+} */
 
-}
 
 @media screen and (max-width: 600px){
     #a_song_of_ice_and_fire_list{
