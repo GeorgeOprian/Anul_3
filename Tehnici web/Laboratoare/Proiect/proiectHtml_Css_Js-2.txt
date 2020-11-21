@@ -9,20 +9,18 @@ Cerinte:
 
 HTML
 -taguri semantice: 
-    nav, (la meniu)
-    ul, (la meniu)
+
     
  CSS
--selectori:
-:hover,  (la meniu) 
+-selectori: 
 [atribut*=val]   (la link)
 
 -proprietati: 
 
 visibility, (la meniu cred)
 
--meniu drop-down, 
--transform, transition, animation
+-
+transition, animation
 
 Css -responsive: 
 

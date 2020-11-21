@@ -82,6 +82,11 @@ figure figcaption {
 
 }
 
+.gallery figure:hover img{
+    transform: scaleX(1.25) scaleY(1.25);
+}
+
+
 
 
 
