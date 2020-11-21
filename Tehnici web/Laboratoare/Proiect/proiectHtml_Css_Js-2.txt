@@ -13,7 +13,7 @@ HTML
     ul, (la meniu)
     
  CSS
--selectori: 
+-selectori:
 :hover,  (la meniu) 
 [atribut*=val]   (la link)
 

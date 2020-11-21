@@ -17,6 +17,9 @@ header img{
     margin-right: auto;
     padding-left: 5%;
 }
+.menu {
+    display: flex;
+}
 .menu_icon_bar {
     width: 25px;
     height: 3px;
@@ -25,44 +28,54 @@ header img{
 }
 #menu_icon{
     display: inline-block;
+    align-self: flex-start;
 }
 
 nav{
-    background-color: #BFBFBF;
-    display: inline-block;  
+    display: none;  
     border-radius: 5px;
     text-align: center;
+    z-index: 100;
     
 }
+#menu_icon:hover + nav{
+    display: inline-block;
+}
+.menu_content{
+    display: block;
+}
+/* nav:hover .menu_content{
+    display: inline-block;
+} */
 
-nav ul{
+.menu_content a{
     list-style-type: none;
     margin: 0 auto;
     border: 1px;
     border-style: solid;
     border-color: red; 
     padding-left: 0;
-    display: inline-block;
+    display: block;
+    background-color: #BFBFBF;
 }
 
-ul li{
-    border: 1px;
-    border-style: solid;
-    border-color: green;
+.dropdown_content{
+    display: none;
 }
-nav ul li h3{
-    display: inline;
-}
-  
-nav li:hover ul {
-    visibility: visible;
-}
+/* .dropdown_button{
+    display: inline-block;
+} */
+/* .dropdown:hover .dropdown_content{
+    display: inline-block;
+} */
+
 
 
 
 #dropdown_list{
     z-index: 1;
-    display: inline-block;;
+    display: inline-block;
+    background-color: #BFBFBF;
 }
 
 .main{
