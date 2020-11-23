@@ -7,29 +7,35 @@ Cerinte:
  3.intelegerea notiunilor
 *sa contina toate elemente enumerate: 
 
-HTML
--taguri semantice: 
 
-    
- CSS
+CSS
 
 -proprietati: 
 
 visibility, (o bag pe js la o imagine, gen sa am un buton pe care sa scrie "Press here to see an image")
 
-- animation
 
 Css -responsive: 
 vw, 
 
 Js
 Baza
--modificare  de proprietati
--modificare  a stilului unui element 
--modificare  eveniment (ex: el.onclick)
--selectare dupa id,tag,clasa,selectorCSS
--creare si stergere element (createElement si removeChild)
--inputuri functionale(buton,text,radio,checkbox) 
 
 
 
+
+-inputuri functionale(radio,checkbox) 
+
+
+
+this is how girls look at my D
+
+
+checkbox
+    radio
+    radio
+    radio
+checkbox
+    radio
+    radio
+si un buton de submit sau ceva

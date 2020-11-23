@@ -9,26 +9,20 @@ body{
 
 header{
     margin-bottom: 2%;
-    /* margin: 2%;
-    padding-top: 0.5%; */
     position: sticky;
     top: 0;
-    /* display: flex; */
     z-index: 12;
     flex-direction: column;
-    /* overflow: unset; */
 }
 #logo{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    /* padding-left: 5%; */
     padding-top: 20px;
     padding-bottom: 10px;
     z-index: 1;
     background-color: #171717;
     justify-content: center;
-    /*align-self: center; */
 }
 
 .menu_icon_bar {
@@ -46,13 +40,11 @@ header{
 #menu {
     margin-left: 2%;
     margin-right: 2%;
-    /* padding: 3%; */
 }
 
 
 nav {
     background-color: #BFBFBF;
-    /* display: flex; */
     display: none;
     border-radius: 7px;
 }
@@ -74,7 +66,6 @@ nav a, .dropdown span {
     z-index: 1;
     background-color:  #BFBFBF; 
     border-radius: 7px;
-    /* float: left; */
 }
 
 .dropdown span {
@@ -120,78 +111,12 @@ nav a{
 }
 
 
-
-
-
-/* .dropdown{
-    border: 1px solid #171717;
-}
-
-
-.dropdown_list{
-    border: 1px solid #ad2e2e;
-
-}
-.dropdown_list li {
-    border: 1px solid green;
-} */
-
-
-
-/* .dropdown_list a:hover {
-    background-color: #2b75ca;
-} */
-
-
-
-/* #menu {
-    display: flex;
-} */
-
-/*
-nav{
-    display: none;  
-    border-radius: 5px;
-    text-align: center;
-    z-index: 100;
-    
-}
-#menu_icon:hover + nav{
-    display: inline-block;
-}
-.menu_content{
-    display: block;
-}
-
-.menu_content a{
-    list-style-type: none;
-    margin: 0 auto;
-    border: 1px;
-    border-style: solid;
-    border-color: red; 
-    padding-left: 0;
-    display: block;
-    background-color: #BFBFBF;
-}
-
-.dropdown_content{
-    display: none;
-}
-
-#dropdown_list{
-    z-index: 1;
-    display: inline-block;
-    background-color: #BFBFBF;
-}
-*/
-
 .main{
     background-color:  #BFBFBF;
     border-radius: 7px;
     margin: 2%;
     padding: 3%;
     overflow: auto;
-    /* position: relative; daca am pozitia asta pot sa imi asez divul sa pluteasca peste main, altfel  ar pluti peste toata pagina*/ 
 }
 
 @media (max-width: 768px){
@@ -274,7 +199,6 @@ nav{
     padding: 2%;
     width: auto;
     overflow: auto;
-    /* word-wrap: break-word; */
 }
 
 #george_pic{
@@ -282,6 +206,7 @@ nav{
     width: 30%;
     height: 30%;
     padding: 1% 1% 1% 0%;
+    
 }
 
 .important_in_p {
@@ -322,7 +247,6 @@ nav{
 #list_content {
     margin-top: auto; 
     margin-bottom: auto;
-    /* display: inline-block; */
     padding: 3vh 3vw 3vh 0vw;
     display: inline-block;
 }
@@ -333,20 +257,9 @@ nav{
     font-family: 'Franklin Gothic Medium';
 }
 #a_song_book_pic{
-    /* float: right; */
     flex-grow: 0;
     flex-shrink: 0;
 }
-
-/* #a_song_book_pic img {
-    transition: width 2s ease-in-out;
-}
-
-#a_song_book_pic:hover img{
-    width: 500px;
-    height: auto;
-} */
-
 
 @media screen and (max-width: 600px){
     #a_song_of_ice_and_fire_list{
@@ -354,12 +267,6 @@ nav{
         justify-content: center;
     }
 }
-
-/* @media (min-width: 425) and (max-width: 768px){
-    #a_song_book_pic {
-        height: ;
-    }
-} */
 
 
 #stats h3 span{
@@ -377,34 +284,13 @@ table thead :nth-child(1){
 
 tr:nth-of-type(even){
     background: #65a1e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 td, th{
     text-align: center; 
     vertical-align: middle;
 }
-
-/* .jon_snow aside{
-    float: right;
-    width: 50%;
-    clear: right;
-}
-.jon_snow aside p span{
-    font-weight: bold; 
-    font-style: italic;
-} */
-
-
-/* .daenerys aside{
-    float: left;
-    width: 50%;
-}
-
-.daenerys aside p span{
-    font-weight: bold; 
-    font-style: italic;
-    float: ;
-} */
-
 
 footer {
     padding: 2vh;

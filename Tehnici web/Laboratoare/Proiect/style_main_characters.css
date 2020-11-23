@@ -16,6 +16,11 @@
     align-items: center;
 }
 
+.jon_danny figure img:hover {
+    animation-name: rotate_character;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+}
 @media (max-width: 1200px){
     .jon_danny figure {
         width: 450px;
@@ -35,7 +40,7 @@
 .jon_snow figure{
     float: left;
     margin-right: 20px;
-
+    
 }
 .jon_danny img{
     width: 100%;
@@ -76,7 +81,6 @@
         flex-grow: 0;
     }
 
-    
 }
 
 @media (max-width: 500px){
@@ -85,3 +89,39 @@
         height: 80%;
     };
 }
+
+@keyframes rotate_character {
+    0% {transform: rotate3d(1, 0, 0, 0deg);}
+    25% {transform: rotate3d(1, 0, 0, 90deg);}
+    50% {transform: rotate3d(1, 0, 0, 180deg);}
+    75% {transform: rotate3d(1, 0, 0, 270deg);}
+    100% {transform: rotate3d(1, 0, 0, 360deg);}  
+}
+
+
+#hidden_image {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#hidden_image figure{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
+    visibility: hidden;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+#hidden_image figure img {
+    width: 100%;
+    height: auto;
+}
+
+
+#hidden_image button{
+    margin-right: 20px;
+}
+

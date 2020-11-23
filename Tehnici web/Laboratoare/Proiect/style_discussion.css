@@ -1,0 +1,32 @@
+#comments_section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 0;
+}
+
+.comment {
+    border: 1px solid black;
+    padding: 1%;
+    margin-bottom: 10px;
+}
+
+.comment p {
+    border: 1px solid green;
+}
+button {
+    width: 150px;
+    height: 20px;
+    margin-bottom: 20px;
+}
