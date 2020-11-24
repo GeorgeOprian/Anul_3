@@ -15,18 +15,10 @@ CSS
 visibility, (o bag pe js la o imagine, gen sa am un buton pe care sa scrie "Press here to see an image")
 
 
-Css -responsive: 
-vw, 
+Css -responsive:  
 
 Js
 Baza
-
-
-
-
--inputuri functionale(radio,checkbox) 
-
-
 
 this is how girls look at my D
 

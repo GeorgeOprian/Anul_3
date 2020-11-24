@@ -15,7 +15,10 @@
     padding-bottom: 20px;
     padding-right: 0;
 }
-
+#comment_input{
+    width: 80vw;
+    height: 60px;
+}
 .comment {
     border: 1px solid black;
     padding: 1%;
