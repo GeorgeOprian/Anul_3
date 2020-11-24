@@ -7,7 +7,7 @@
 }
 .jon_danny figure{
     display: flex;
-    width: 45%;
+    width: 500px;
     height: auto;
     margin-left: 0;
     margin-right: 0;
@@ -16,10 +16,31 @@
     align-items: center;
 }
 
+.jon_danny figure img:hover {
+    animation-name: rotate_character;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+}
+@media (max-width: 1200px){
+    .jon_danny figure {
+        width: 450px;
+    }
+    .jon_danny {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1000px){
+    .jon_danny figure {
+        width: 400px;
+    }
+}
+
+
 .jon_snow figure{
     float: left;
     margin-right: 20px;
-
+    
 }
 .jon_danny img{
     width: 100%;
@@ -42,10 +63,11 @@
     }
     
     .character-content figure {
-        width: 90%;
+        
         height: 50%;
         align-items: center;
         flex-direction: column;
+        align-self: center;
     }
     
     .jon_danny figure{
@@ -53,11 +75,53 @@
     }
 
     .jon_danny img {
-        height: 80%;
-        width: 60%;
+        height: 90%;
+        
         align-self: center;
         flex-grow: 0;
     }
 
-    
 }
+
+@media (max-width: 500px){
+    .jon_danny figure {
+        width: 250px;
+        height: 80%;
+    };
+}
+
+@keyframes rotate_character {
+    0% {transform: rotate3d(1, 0, 0, 0deg);}
+    25% {transform: rotate3d(1, 0, 0, 90deg);}
+    50% {transform: rotate3d(1, 0, 0, 180deg);}
+    75% {transform: rotate3d(1, 0, 0, 270deg);}
+    100% {transform: rotate3d(1, 0, 0, 360deg);}  
+}
+
+
+#hidden_image {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#hidden_image figure{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
+    visibility: hidden;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+#hidden_image figure img {
+    width: 100%;
+    height: auto;
+}
+
+
+#hidden_image button{
+    margin-right: 20px;
+}
+

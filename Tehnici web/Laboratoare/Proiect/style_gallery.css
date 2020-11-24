@@ -4,6 +4,7 @@
     grid-gap: 5px;
     justify-items: center;
     align-items: stretch;
+    overflow: hidden;
 }
 
 .gallery figure {
@@ -81,6 +82,15 @@ figure figcaption {
  
 
 }
+
+.gallery figure:hover img{
+    transform: scaleX(1.25) scaleY(1.25);
+}
+
+.to_hide {
+    visibility: hidden;
+}
+
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 
 <head>
     <title>Main Characters GoT fan page</title>
@@ -10,31 +10,50 @@
     <meta name = "description" content="Tema pentru laboratorul de Tehnici Web">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="style_main_characters.css">
+
+    <script src = "script.js"></script>
 </head>
 
 <body>
     <header> <!--meniu si titlu-->
-    
+        
+        <div id = "logo">
+            <a href="./index.html#menu"><img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20"></a>
+        </div>
+        
+        
+    </header>
+
+    <div id="menu">
         <div id = "menu_icon">
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
         </div>
-        <img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20">
-        <br>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="main_characters.html">Main characters</a></li>
-                </li><a href="gallery.html">Gallery</a></li>
-                <li>Sezoane</li>
-                
-                <!-- <li><h3>Home</h3></li>
-                <li><h3>Seasons</h3></li>
-                <li><h3>Actors</h3></li> -->
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="main_characters.html">Main characters</a>
+            <a href="gallery.html">Gallery</a>
+            <div class = "dropdown">
+                <!-- <div class="dropdown_button"> -->
+                    <span>Seasons</span>
+                <!-- </div> -->
+                <ul class = "dropdown_list">
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=1&ref_=tt_eps_sn_1" target="_blank">Season 1</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=2" target="_blank">Season 2</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=3" target="_blank">Season 3</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=4" target="_blank">Season 4</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=5" target="_blank">Season 5</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=6" target="_blank">Season 6</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=7" target="_blank">Season 7</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=8" target="_blank">Season 8</a></li>
+                </ul>
+            </div>
+            <a href="js_requirements.html">JS requirementes</a>
+            
         </nav>
-    </header>
+            
+    </div>
     
     <main class = "main main-characters">
         <div class = "jon_danny jon_snow">
@@ -74,9 +93,15 @@
                     </q> <span class = "important_in_p">Daenerys Targaryen</span> to Jon Snow
                 </p>
                 
-            </div>
-            
+            </div>  
         </div>
+
+        <!-- <div id="hidden_image">
+            <button id = "jokeButtton" onclick="displayImage()">Click me to see bouth characters</button>
+            <figure class = "jon_danny">
+               
+            </figure>
+        </div> -->
         
 
     </main>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
+<head >
     <title>Game of thrones fan page</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="Game of Thrones, Thrones, Lanister, Stark, John Snow, Dragons, ">
@@ -9,42 +9,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "description" content="Tema pentru laboratorul de Tehnici Web">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src = "script.js"></script>
+
 </head>
 
 <body>
     
+    
 
     <header> <!--meniu si titlu-->
-    
+        
+        <div id = "logo">
+            <a href="./index.html#menu"><img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20"></a>
+        </div>
+        
+        
+    </header>
+
+    <div id="menu">
         <div id = "menu_icon">
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
         </div>
-        <img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20">
-        <br>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="main_characters.html">Main characters</a></li>
-                </li><a href="gallery.html">Gallery</a></li>
-                <li id = "drop_down_button">Sezoane</li>
-                <ul id = "dropdown_list">
-                    <li>Sezon 1</li>
-                    <li>Sezon 2</li>
-                    <li>Sezon 3</li>
-                    <li>Sezon 4</li>
-                    <li>Sezon 5</li>
-                    <li>Sezon 6</li>
-                    <li>Sezon 7</li>
-                    <li>Sezon 8</li>
+            <a href="index.html">Home</a>
+            <a href="main_characters.html">Main characters</a>
+            <a href="gallery.html">Gallery</a>
+            <div class = "dropdown">
+                <!-- <div class="dropdown_button"> -->
+                    <span>Seasons</span>
+                <!-- </div> -->
+                <ul class = "dropdown_list">
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=1&ref_=tt_eps_sn_1" target="_blank">Season 1</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=2" target="_blank">Season 2</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=3" target="_blank">Season 3</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=4" target="_blank">Season 4</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=5" target="_blank">Season 5</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=6" target="_blank">Season 6</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=7" target="_blank">Season 7</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=8" target="_blank">Season 8</a></li>
                 </ul>
-                <!-- <li><h3>Home</h3></li>
-                <li><h3>Seasons</h3></li>
-                <li><h3>Actors</h3></li> -->
-            </ul>
+                
+            </div>
+            <a href="discussion.html">Discussion</a>
+            
         </nav>
-    </header>
+            
+    </div>
     
     <main class = "main"> <!--tot contentul din site sa fie in sectionul asta-->
         
@@ -60,7 +73,7 @@
                 </div>
                  <h1>Intro</h1>
                 <article>
-                    <h1>About the show</h1>
+                    <h2>About the show</h2>
                     <p><q>Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss for HBO. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is A Game of Thrones (1996). The series premiered on HBO in the United States on April 17, 2011, and concluded on May 19, 2019, with 73 episodes broadcast over eight seasons.</q>(Wikipedia) </p>
 
                     <p><q>The whole story is about nine noble families which fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.</q>(Wikipedia)</p>
@@ -72,7 +85,7 @@
             <div id = "the_game_begins">
                 <h2><q>The Game Begins</q></h2>
                 <div class="video-container video-container-16x9">
-                    <iframe  src="https://www.youtube.com/embed/BpJYNVhGf1s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe  src="https://www.youtube.com/embed/BpJYNVhGf1s"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             
@@ -81,7 +94,7 @@
         
         <div id = "george" class = "main">
             <h2>George R.R. Martin</h2>
-            <img id = "george_pic"src="https://bit.ly/3ljNDxk" alt="A picture with George R.R. Martin">
+            <img id = "george_pic" src="https://bit.ly/3ljNDxk" alt="A picture with George R.R. Martin">
             <p><span class = "important_in_p">George Raymond Richard Martin</span>(born George Raymond Martin; September 20, 1948), also known as GRRM, is an American novelist and short story writer, screenwriter, and television producer. He writes the series of epic fantasy novels A Song of Ice and Fire, which was adapted into the HBO series Game of Thrones (2011–2019).</p>
             <p>Martin began selling science fiction short stories professionally in 1970, at age 21. His first sale was "The Hero", sold to Galaxy magazine and published in its February 1971 issue; other sales soon followed. His first story to be nominated for the Hugo Award and Nebula Awards was "With Morning Comes Mistfall", published in 1973 in Analog magazine. In 1975 his story "...for a single yesterday" about a post-apocalyptic timetripper was selected for inclusion in Epoch, a science fiction anthology edited by Roger Elwood and Robert Silverberg.</p>
             <p>In 1987, Martin published a collection of short horror stories in Portraits of His Children.In 1991, Martin briefly returned to writing novels. He had grown frustrated that his TV pilots and screenplays were not getting made[50] and that TV-related production limitations like budgets and episode lengths were forcing him to cut characters and trim battle scenes. This pushed Martin back towards writing books, where he did not have to worry about compromising his imagination. Admiring the works of J. R. R. Tolkien in his childhood, he wanted to write an epic fantasy, though he did not have any specific ideas.</p>
@@ -102,7 +115,7 @@
                     </ol>
                 </div>
                 <div id="a_song_book_pic">
-                    <img id = "a_song_book_pic"src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg/220px-A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg" alt="A picture with <A Song of Ice and Fire>">
+                    <img  src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg/220px-A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg" alt="A picture with <A Song of Ice and Fire>">
                 </div>
                 
                 
@@ -115,7 +128,7 @@
             <h2>Some stats about the show</h2>
             <h3>Overall IMDB grade: <span>9.3 </span>/ 10</h3>
             <div id = "table_of_stats">
-                <table>
+                <table onmouseover = "">
                     <thead>
                         <tr>
                             <th>Season</th>
@@ -174,7 +187,9 @@
     <footer class = "main">
         <h3>Valar Morghulis</h3>
         <q>Jaqen H'ghar</q>
-        <span >Season 2; Episode 10</span>
+        <aside>
+            <span >Season 2; Episode 10</span>
+        </aside>
     </footer>
 </body>
 

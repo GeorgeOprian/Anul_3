@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 
 <head>
     <title>Game of thrones fan page</title>
@@ -10,33 +10,53 @@
     <meta name = "description" content="Tema pentru laboratorul de Tehnici Web">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="style_gallery.css">
+
+    <script src = "script.js"></script>
+    
 </head>
 
 <body>
 
-    
-    <header> <!--meniu si titlu-->
-    
+   <header> <!--meniu si titlu-->
+        
+        <div id = "logo">
+            <a href="./index.html#menu"><img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20"></a>
+        </div>
+        
+        
+    </header>
+
+    <div id="menu">
         <div id = "menu_icon">
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
             <div class="menu_icon_bar"></div>
         </div>
-        <img src="https://fontmeme.com/permalink/201105/cbb182be2a8bbc735f7cb5f3e734afe9.png" alt="game-of-thrones-font de 20">
-        <br>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="main_characters.html">Main characters</a></li>
-                </li><a href="gallery.html">Gallery</a></li>
-                <li>Sezoane</li>
+            <a href="index.html">Home</a>
+            <a href="main_characters.html">Main characters</a>
+            <a href="gallery.html">Gallery</a>
+            <div class = "dropdown">
+                <!-- <div class="dropdown_button"> -->
+                    <span>Seasons</span>
+                <!-- </div> -->
+                <ul class = "dropdown_list">
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=1&ref_=tt_eps_sn_1" target="_blank">Season 1</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=2" target="_blank">Season 2</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=3" target="_blank">Season 3</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=4" target="_blank">Season 4</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=5" target="_blank">Season 5</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=6" target="_blank">Season 6</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=7" target="_blank">Season 7</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/episodes?season=8" target="_blank">Season 8</a></li>
+                </ul>
                 
-                <!-- <li><h3>Home</h3></li>
-                <li><h3>Seasons</h3></li>
-                <li><h3>Actors</h3></li> -->
-            </ul>
+            </div>
+            <a href="discussion.html">Discussion</a>
+            
         </nav>
-    </header>
+            
+    </div>
     
     <main class = "main">
 
@@ -125,10 +145,27 @@
                 <figcaption>"Winterfell", house of Stark familly - Doune Castele, Scotland</figcaption>
             </figure>
 
-            <figure>
+            <figure id = "to_scale">
                 <img src="https://i.pinimg.com/originals/d4/89/c2/d489c2206d0287917cb442eae8b7efe5.jpg" alt="Fort Manoel, Malta">
                 <figcaption>The place where Ned Stark met his end on King Joffrey’s orders - Fort Manoel, Malta</figcaption>
             </figure>
+            <figure></figure>
+            <figure></figure>
+
+            <figure>
+                <button id = "display_button" onclick="displayImages()">Press here to see another pictures</button>
+            </figure>
+            
+            <figure class = "to_hide">
+                <img src="https://tourism.euskadi.eus/contenidos/h_cultura_y_patrimonio/0000010461_h5_rec_turismo/en_10461/images/PT_sanjuandegaztelugatxe1024.jpg" alt="San Juan de Gaztelugatxe, Scotland ">
+                <figcaption>"Dragonstone" - San Juan de Gaztelugatxe, Spain</figcaption>
+            </figure>
+
+            <figure class = "to_hide">
+                <img src="https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2017/08/27111717/shutterstock_678320179.jpg" alt="Zafra Castle, Zaragoza Spain ">
+                <figcaption>"the Tower of Joy" - Zafra Castle, Zaragoza Spain</figcaption>
+            </figure>
+
             
             
         </div>
@@ -140,7 +177,9 @@
     <footer class = "main">
         <h3>Valar Morghulis</h3>
         <q>Jaqen H'ghar</q>
-        <span >Season 2; Episode 10</span>
+        <aside>
+            <span >Season 2; Episode 10</span>
+        </aside>
     </footer>
 </body>
 

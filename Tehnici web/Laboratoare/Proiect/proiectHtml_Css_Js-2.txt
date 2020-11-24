@@ -7,38 +7,27 @@ Cerinte:
  3.intelegerea notiunilor
 *sa contina toate elemente enumerate: 
 
-HTML
--taguri semantice: 
-    nav, (la meniu)
-    ul, (la meniu)
-    
- CSS
--selectori: 
-:hover,  (la meniu) 
-[atribut*=val]   (la link)
+
+CSS
 
 -proprietati: 
 
-visibility, (la meniu cred)
+visibility, (o bag pe js la o imagine, gen sa am un buton pe care sa scrie "Press here to see an image")
 
--meniu drop-down, 
--transform, transition, animation
 
-Css -responsive: 
-
-vw, 
--position( sticky), (la meniu)
- z-index
-
+Css -responsive:  
 
 Js
 Baza
--modificare  de proprietati
--modificare  a stilului unui element 
--modificare  eveniment (ex: el.onclick)
--selectare dupa id,tag,clasa,selectorCSS
--creare si stergere element (createElement si removeChild)
--inputuri functionale(buton,text,radio,checkbox) 
+
+this is how girls look at my D
 
 
-
+checkbox
+    radio
+    radio
+    radio
+checkbox
+    radio
+    radio
+si un buton de submit sau ceva

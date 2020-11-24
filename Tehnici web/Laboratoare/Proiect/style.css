@@ -3,20 +3,28 @@ body{
     font-family: sans-serif;
     font-size: 1.2em;
     text-align: justify;
+    position: relative;
+    
 }
 
 header{
     margin-bottom: 2%;
-    margin: 2%;
-    padding-top: 0.5%;
-    
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    flex-direction: column;
 }
-header img{
-    display: inline-block;
+#logo{
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 5%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    z-index: 1;
+    background-color: #171717;
+    justify-content: center;
 }
+
 .menu_icon_bar {
     width: 25px;
     height: 3px;
@@ -25,53 +33,90 @@ header img{
 }
 #menu_icon{
     display: inline-block;
+    align-self: flex-start;
 }
 
-nav{
+
+#menu {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+nav {
     background-color: #BFBFBF;
-    display: inline-block;  
-    border-radius: 5px;
-    text-align: center;
-    
+    display: none;
+    border-radius: 7px;
 }
 
-nav ul{
-    list-style-type: none;
-    margin: 0 auto;
-    border: 1px;
-    border-style: solid;
-    border-color: red; 
-    padding-left: 0;
+nav a, .dropdown span {
+    float: left;
+    align-self: baseline;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #171717;
+}
+
+.dropdown .dropdown_list {
+    display: none;
+    padding-left: 5px;
+    position: absolute;
+    top: 130px;
+    z-index: 1;
+    background-color:  #BFBFBF; 
+    border-radius: 7px;
+}
+
+.dropdown span {
     display: inline-block;
 }
 
-ul li{
-    border: 1px;
-    border-style: solid;
-    border-color: green;
+.dropdown_list {
+    display: none;
+    list-style: none;
 }
-nav ul li h3{
-    display: inline;
+#menu:hover nav {
+    display: flex;
 }
-  
-nav li:hover ul {
-    visibility: visible;
+nav a:hover, .dropdown span:hover {
+    background-color: #2b75ca;
+}
+nav a:visited {
+    text-decoration: none;
+    color: #171717;
 }
 
-
-
-#dropdown_list{
-    z-index: 1;
-    display: inline-block;;
+.dropdown:hover .dropdown_list{
+    display: block;
 }
+nav a{
+    align-self: center;
+}
+[target *= "blank"]{
+    font-weight: bold;
+}
+
+@media (max-width: 500px){
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropdown .dropdown_list {
+        top: 260px;
+    }
+    
+}
+
 
 .main{
-    background-color:  #BFBFBF    ;
+    background-color:  #BFBFBF;
     border-radius: 7px;
     margin: 2%;
     padding: 3%;
     overflow: auto;
-    /* position: relative; daca am pozitia asta pot sa imi asez divul sa pluteasca peste main, altfel  ar pluti peste toata pagina*/ 
 }
 
 @media (max-width: 768px){
@@ -133,6 +178,7 @@ nav li:hover ul {
     width: 90%;
     overflow: hidden;
     padding: 0;
+    z-index: 0;
 }
 
 .video-container-16x9{
@@ -145,6 +191,7 @@ nav li:hover ul {
     left: 0;
     width: 100%;
     height: 100%;
+   border:non
 }
 
 #george{
@@ -152,7 +199,6 @@ nav li:hover ul {
     padding: 2%;
     width: auto;
     overflow: auto;
-    /* word-wrap: break-word; */
 }
 
 #george_pic{
@@ -160,12 +206,20 @@ nav li:hover ul {
     width: 30%;
     height: 30%;
     padding: 1% 1% 1% 0%;
+    
 }
 
 .important_in_p {
     font-weight: bold; 
     font-style: italic;
     font-size: 1.3em;
+    transition-duration: 2s;
+    transition-property: font-size;
+
+}
+
+.important_in_p:hover{
+    font-size: 20px;
 }
 
 .highlighted_volume {
@@ -193,7 +247,6 @@ nav li:hover ul {
 #list_content {
     margin-top: auto; 
     margin-bottom: auto;
-    /* display: inline-block; */
     padding: 3vh 3vw 3vh 0vw;
     display: inline-block;
 }
@@ -204,7 +257,6 @@ nav li:hover ul {
     font-family: 'Franklin Gothic Medium';
 }
 #a_song_book_pic{
-    /* float: right; */
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -215,12 +267,6 @@ nav li:hover ul {
         justify-content: center;
     }
 }
-
-/* @media (min-width: 425) and (max-width: 768px){
-    #a_song_book_pic {
-        height: ;
-    }
-} */
 
 
 #stats h3 span{
@@ -238,34 +284,13 @@ table thead :nth-child(1){
 
 tr:nth-of-type(even){
     background: #65a1e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 td, th{
     text-align: center; 
     vertical-align: middle;
 }
-
-/* .jon_snow aside{
-    float: right;
-    width: 50%;
-    clear: right;
-}
-.jon_snow aside p span{
-    font-weight: bold; 
-    font-style: italic;
-} */
-
-
-/* .daenerys aside{
-    float: left;
-    width: 50%;
-}
-
-.daenerys aside p span{
-    font-weight: bold; 
-    font-style: italic;
-    float: ;
-} */
-
 
 footer {
     padding: 2vh;
