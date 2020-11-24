@@ -23,11 +23,5 @@ Baza
 this is how girls look at my D
 
 
-checkbox
-    radio
-    radio
-    radio
-checkbox
-    radio
-    radio
-si un buton de submit sau ceva
+o stilizare pe comentariu sa arate mai bine
+comment alb si alta culoare la background 

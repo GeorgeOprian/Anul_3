@@ -24,6 +24,7 @@
 @media (max-width: 1200px){
     .jon_danny figure {
         width: 450px;
+        font-size: 0.8em;
     }
     .jon_danny {
         font-size: 1em;
@@ -40,6 +41,7 @@
 .jon_snow figure{
     float: left;
     margin-right: 20px;
+    padding-bottom: 20px;
     
 }
 .jon_danny img{
@@ -63,8 +65,7 @@
     }
     
     .character-content figure {
-        
-        height: 50%;
+        height: 60%;
         align-items: center;
         flex-direction: column;
         align-self: center;
@@ -76,17 +77,26 @@
 
     .jon_danny img {
         height: 90%;
-        
         align-self: center;
         flex-grow: 0;
     }
 
 }
 
+@media (min-width: 500px) and (max-width: 767px){
+    .jon_danny img {
+        height: 90%;
+        width: 70%;
+        align-self: center;
+        flex-grow: 0;
+    }
+}
+
 @media (max-width: 500px){
     .jon_danny figure {
-        width: 250px;
+        width: 60%;
         height: 80%;
+        padding: 20px
     };
 }
 

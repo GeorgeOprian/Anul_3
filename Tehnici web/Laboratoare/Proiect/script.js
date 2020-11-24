@@ -1,11 +1,12 @@
 window.onload = function (){
-    changeProperties();
+    changeProperties(); 
 } 
 
 
 function postComment(){
     var inputText = document.getElementById("comment_input").value.trim();
     var defaultMessage = "Write your opinion about my website here.";
+    
     if (inputText != defaultMessage && inputText != ""){
         var newDiv = document.createElement("div");
         newDiv.className = "comment";
@@ -15,7 +16,21 @@ function postComment(){
         newDiv.appendChild(newParagraph);
         var commentsSections = document.getElementById("comments_section");
         commentsSections.appendChild(newDiv)
+        document.getElementById("comment_input").value = defaultMessage.trim();
     }
+}
+
+
+function deleteContent(){
+    var textArea = document.getElementById("comment_input");
+    var inputText = textArea.value.trim();
+    if (inputText != ""){
+        var defaultMessage = "Write your opinion about my website here.";
+        if (inputText == defaultMessage.trim()){
+            textArea.value = "";
+        }    
+    }
+    
 }
 
 function deleteComments(){
@@ -28,8 +43,8 @@ function deleteComments(){
 }
 function displayImages(){
     var figures = document.getElementsByClassName("to_hide");  /// aici sa creez obiectul
-    var button = document.getElementsByTagName("button");
-    
+    var buttons = document.getElementsByTagName("button");
+    var button = buttons[0];
     for (let figure of figures) {
         // alert(figure.figcaption);
         if (figure.style.visibility != "visible"){
