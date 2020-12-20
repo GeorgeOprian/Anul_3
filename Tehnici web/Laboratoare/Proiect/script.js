@@ -1,24 +1,17 @@
 window.onload = function (){
-    changeProperties(); 
+    //changeProperties(); 
+    (function printImagesSrc(){
+        var images = document.getElementsByTagName("img");
+        for (var i = 0; i < images.length; i++){
+            console.log(i + ": " + images[i].src)
+            images[i].onclick = function(){alert(this.src);}
+        }
+        console.log(i)
+    })()
+    console.log(i)
 } 
 
 
-function postComment(){
-    var inputText = document.getElementById("comment_input").value.trim();
-    var defaultMessage = "Write your opinion about my website here.";
-    
-    if (inputText != defaultMessage && inputText != ""){
-        var newDiv = document.createElement("div");
-        newDiv.className = "comment";
-        var newParagraph = document.createElement("p");
-        var text = document.createTextNode(inputText);
-        newParagraph.appendChild(text);
-        newDiv.appendChild(newParagraph);
-        var commentsSections = document.getElementById("comments_section");
-        commentsSections.appendChild(newDiv)
-        document.getElementById("comment_input").value = defaultMessage.trim();
-    }
-}
 
 
 function deleteContent(){
@@ -33,14 +26,7 @@ function deleteContent(){
     
 }
 
-function deleteComments(){
-    var comments_section = document.getElementById("comments_section");
-    var comments = document.getElementsByClassName("comment");
-    var commentsLen =  comments.length;
-    for (let i = 0; i < commentsLen; i++) {
-        comments_section.removeChild(comments[0]);
-    }
-}
+
 function displayImages(){
     var figures = document.getElementsByClassName("to_hide");  /// aici sa creez obiectul
     var buttons = document.getElementsByTagName("button");
@@ -78,4 +64,7 @@ function changeGeorgeMouseOut (){
     george.style.marginRight = "";
     george.style.marginBottom = "";
 }
+
+
+
 

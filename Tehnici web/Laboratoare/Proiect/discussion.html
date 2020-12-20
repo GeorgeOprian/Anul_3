@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="style_discussion.css">
     <script src = "script.js"></script>
+    <script src = "comments_script.js"></script>
 </head>
 
 <body>
@@ -58,16 +59,29 @@
         <h2>Leave us your thoughts here:</h2>
         <label for="comment_input">Comment:</label>
         <br>
-        <textarea id="comment_input" name="comment_input" rows="4" cols="100" onclick="deleteContent()">Write your opinion about my website here.</textarea>
+        <textarea id="comment_input" name="comment_input" rows="4" cols="100" onclick="deleteContent()" placeholder="Write your opinion about my website here."></textarea>
             <br><br>
+        <div id="radio_post">
+            <p>Do you want to post the comment or just to send it to the creator?</p>
+            <input type="radio" id = "post" name = "post" value = "Post" checked>
+            <label for="post">Post</label>
+            <br>
+            <input type="radio" id = "to_creator" name = "post" value = "to_creator">
+            <label for = "to_creator">Just send it to the creator</label>
+        </div>
         <button onclick="postComment()">Post</button>
+        <!-- pe enter sa posteze cu add event listener-->
        
         <div id="comments_section">
             <button onclick = "deleteComments()">Delete entire section</button>
             <div class="comment">
                 <p>This is a comment</p>
+                <p class = "comment-date">Posted on: <span>14.12.2020 - 18:30</span> </p>
             </div>
-            
+        </div>
+
+        <div id = "hidden_comments">
+            <p id = "display_comments">Click here to show your comments that were not posted</p>
         </div>
     </main>
 

@@ -1,0 +1,20 @@
+buton individual pentru sters comentariu
+folosesc event.stopPropagation() pe divul care contine comentariul dar dupa ce se sterge din parinte
+
+Pe comentariu:
+- - vrei sa postezi comentariul sau vreau sa-l vada doar autorul -> buton radio
+- functie de constructi de comentariu (divul de comentariu)
+    - construieste paragraful cu inputul din textarea
+    - seteaza culoare random
+    - divului in care e comentariul ii pune in classlist clasa pe care o are cometriul acum
+- culoare random la font
+    - (daca nu ii place culoarea fontului poate sa o schimbe dintr-un drop-down list sau ceva de genu cu butoane radio in care sa am niste culori fixe
+    - aici as avea si getComputedStyle
+    ) si da si nu
+- data la care a fost postat 
+    - la comentariul asta pot sa pun o clasa din js
+- vrei sa postezi comentariul sau vreau sa-l vada doar autorul -> buton radio
+- salvez comentariile in local storage ca json
+
+
+memorez comentariile care nu vrea sa fie afisate in local storage (salvez un json cu textul, data si keia sa fie id ul comentariului)

@@ -1,0 +1,27 @@
+inputuri (radio) cu optiuni: culoare random la scrisul de la comentariu si daca nu ii place poate sa o schimbe din lista de culori facuta cu radio button (planificat)
+
+"vrei sa postezi comentariul sau vreau sa-l vada doar autorul"
+this(necesar), (done) 
+let(necesar),    (planificat)
+navigare in arbore (children, - la stergerea de comentariu: sa stearga copiii la click pe buton si apoi pe el insusi (eventul propagandu se la parinte)
+parentElement, ..)
+
+getComputedStyle 
+addEventListener cu param3=true(necesar) la stergerea de comentariu propagare de la buton la parinte
+
+event -proprietati(target,    
+      key/pageX)
+      
+      -metode (stopPropagation,  - la stergerea de comentariu: click ul sa se propage de la buton la parinte
+
+      preventDefault) nuj ce e asta :)
+
+proprietate noua adaugata unui obiect -> cred ca se incadreaza culoarea random la scrisul comentariului
+
+setInterval(cu >= 3 parametrii-necesar) ,  (nuj :) )
+clearInterval
+
+cate o metoda din clasele predefinite: Math (random), (planificat la culoarea scrisului comentariului) 
+String, 
+
+
