@@ -18,3 +18,13 @@ Pe comentariu:
 
 
 memorez comentariile care nu vrea sa fie afisate in local storage (salvez un json cu textul, data si keia sa fie id ul comentariului)
+
+
+
+
+
+pun culoare de background pe divul cometariilor ascuse cu alb si la click se schimba in culoarea sectiunii de comentarii click ul se va propaga de la paragraf la div si la div se opreste
+
+
+folosesc si get computed style ca sa verific daca culoarea e qlb sau verdele ala
+si la click schimb

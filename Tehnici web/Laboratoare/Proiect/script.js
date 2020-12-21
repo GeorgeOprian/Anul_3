@@ -8,7 +8,6 @@ window.onload = function (){
         }
         console.log(i)
     })()
-    console.log(i)
 } 
 
 

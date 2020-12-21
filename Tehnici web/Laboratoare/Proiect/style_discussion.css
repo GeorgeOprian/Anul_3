@@ -74,6 +74,11 @@ button {
     padding-left: 20px;
     padding-bottom: 20px;
     padding-right: 0;
-    background-color:#b3cccc;
+    background-color: rgb(255, 255, 255);
+    /* #b3cccc; */
     border-radius: 10px;
 }
+
+/* #display_comments {
+    margin-top:0px;
+} */

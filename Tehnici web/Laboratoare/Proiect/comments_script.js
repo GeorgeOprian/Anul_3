@@ -7,26 +7,27 @@ window.onload = function(){
     });
     document.querySelector("#display_comments").addEventListener(
         'click', 
-        function(){
-            //aici trebuie apelata functia care afiseaza comentariile din local storage
-            //daca da click pe paragraf se vor afisa comentariile, dar se va opri propagarea evenimentului
-            // la click pe div se vor afisa comentariile
-
+        function(event){
             var commentsList = getCommentsFromLocalStorage();
             showHiddenComments(commentsList);
-            stopPropagation ();
+            event.stopPropagation();
         },
         false
     )
-    document.getElementById("hidden_comments").addEventListener(
+    
+    var hiddenCommentsSection = document.querySelector("#hidden_comments");
+    hiddenCommentsSection.addEventListener(
         'click',
         function(){
-            // var commentsList = getCommentsFromLocalStorage();
-            // showHiddenComments(commentsList);
-            var section = document.getElementById("hidden_comments");
-            // alert("click pe div");
-            var sectionStyle =  window.getComputedStyle(section);
-            sectionStyle.backgroundColor = getRandomColor();
+            var commentsList = getCommentsFromLocalStorage();
+            showHiddenComments(commentsList);
+            var sectionComputedStyle =  window.getComputedStyle(hiddenCommentsSection);
+            var defaultColor = "RGB(255, 255, 255)";
+            if (sectionComputedStyle.backgroundColor.toLowerCase() == defaultColor.toLowerCase()) {
+                hiddenCommentsSection.style.backgroundColor = "#b3cccc";
+            } else {
+                hiddenCommentsSection.style.backgroundColor = "white"
+            }
         }
     )
 }
@@ -53,7 +54,6 @@ function getCommentsFromLocalStorage() {
     var commentsListJSON = localStorage.getItem("commentsList");
     return JSON.parse(commentsListJSON);
 }
-
 
 function postComment(){
     var inputText = document.getElementById("comment_input").value.trim();
