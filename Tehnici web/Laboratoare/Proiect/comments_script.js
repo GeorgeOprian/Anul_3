@@ -5,32 +5,60 @@ window.onload = function(){
           postComment()
         }
     });
-    document.querySelector("#display_comments").addEventListener(
+    var comments = document.querySelector("#display_comments");
+    comments.addEventListener(
         'click', 
-        function(event){
-            var commentsList = getCommentsFromLocalStorage();
-            showHiddenComments(commentsList);
-            event.stopPropagation();
-        },
-        false
-    )
-    
-    var hiddenCommentsSection = document.querySelector("#hidden_comments");
-    hiddenCommentsSection.addEventListener(
-        'click',
         function(){
             var commentsList = getCommentsFromLocalStorage();
             showHiddenComments(commentsList);
-            var sectionComputedStyle =  window.getComputedStyle(hiddenCommentsSection);
-            var defaultColor = "RGB(255, 255, 255)";
-            if (sectionComputedStyle.backgroundColor.toLowerCase() == defaultColor.toLowerCase()) {
-                hiddenCommentsSection.style.backgroundColor = "#b3cccc";
-            } else {
-                hiddenCommentsSection.style.backgroundColor = "white"
-            }
+            alert("p");
+            
         }
     )
+    var hiddenCommentsSection = comments.parentElement;//document.getElementById("comments_section").nextElementSibling;
+    hiddenCommentsSection.addEventListener(
+        'click',
+        function(event){
+            // var commentsList = getCommentsFromLocalStorage();
+            // showHiddenComments(commentsList);
+            // var sectionComputedStyle =  window.getComputedStyle(hiddenCommentsSection);
+            // var defaultColor = "RGB(255, 255, 255)";
+            // if (sectionComputedStyle.backgroundColor.toLowerCase() == defaultColor.toLowerCase()) {
+            //     hiddenCommentsSection.style.backgroundColor = getRandomColor();//"#b3cccc";
+            // } else {
+            //     hiddenCommentsSection.style.backgroundColor = "rgb(255, 255, 255)"
+            //     //event.stopPropagation();
+            // }
+            if (event.target.tagName == "DIV"){
+                hiddenCommentsSection.style.newBackgroundColor = "#b3cccc"; 
+            }
+            else {
+                hiddenCommentsSection.style.newBackgroundColor = getRandomColor();
+                if (hiddenCommentsSection.style.newBackgroundColor == "#ffffff")
+                    event.stopPropagation();
+            }
+            hiddenCommentsSection.style.backgroundColor = hiddenCommentsSection.style.newBackgroundColor;
+            alert("div");
+            
+            
+            
+        },
+        true
+    )
+
+    var brokenA = document.getElementById("broken_a");
+
+    brokenA.addEventListener(
+        "click",
+        function(event){
+            event.preventDefault();
+            alert("This link is broken")
+        }
+        )
+    
+    
 }
+
 
 
 function getRandomColor() {
@@ -45,8 +73,8 @@ function getRandomColor() {
 function showHiddenComments(commentsList){
     var hiddenSection = document.getElementById("hidden_comments");
     //ar merge ceva asemanator cu strcat
-    for (let comment of commentsList){
-        hiddenSection.innerHTML += comment;
+    for (let i = 0; i < commentsList.length; i++){
+        hiddenSection.innerHTML += commentsList[i];
     }
 }
 
@@ -56,7 +84,9 @@ function getCommentsFromLocalStorage() {
 }
 
 function postComment(){
-    var inputText = document.getElementById("comment_input").value.trim();
+    var main = document.getElementsByTagName("main")[0];
+
+    var inputText = main.children[3].value.trim();//document.getElementById("comment_input").value.trim();
     var defaultMessage = "Write your opinion about my website here.";
 
     ///e o problema ca la enter imi pune textul default in text area si apoi imi trece pe rand nou cu textul
@@ -66,7 +96,8 @@ function postComment(){
         var newComment = createNewComment(inputText);
         
         //clear the textbox
-        document.getElementById("comment_input").value = "";
+        //document.getElementById("comment_input").value = "";
+        inputText = "";
         var post = document.getElementById("post");
         if (post.checked) {
             postCommentInCommentSection(newComment);
@@ -88,7 +119,7 @@ function saveCommentToLocalStorage (newDiv){
         commentsList = JSON.parse(commentsListJSON);
     }
     var newDivHtmlContentent = newDiv.outerHTML;
-    commentsList.push(newDivHtmlContentent);
+    commentsList.unshift(newDivHtmlContentent);
     var commentsListToString = JSON.stringify(commentsList);
     localStorage.setItem("commentsList", commentsListToString); 
 }
