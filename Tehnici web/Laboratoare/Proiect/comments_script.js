@@ -1,8 +1,14 @@
 
 window.onload = function(){
-    document.querySelector('#comment_input').addEventListener('keypress', function (e) {
+    var commentsDisplayed = false;
+    randomColorDisplay = false;
+
+
+    commentInput = document.querySelector('#comment_input')
+    commentInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-          postComment()
+            postComment()
+            commentInput.value = ""
         }
     });
     var comments = document.querySelector("#display_comments");
@@ -11,7 +17,8 @@ window.onload = function(){
         function(){
             var commentsList = getCommentsFromLocalStorage();
             showHiddenComments(commentsList);
-            alert("p");
+            commentsDisplayed = true;
+            alert("You've clicked on a P element");
             
         }
     )
@@ -19,29 +26,17 @@ window.onload = function(){
     hiddenCommentsSection.addEventListener(
         'click',
         function(event){
-            // var commentsList = getCommentsFromLocalStorage();
-            // showHiddenComments(commentsList);
-            // var sectionComputedStyle =  window.getComputedStyle(hiddenCommentsSection);
-            // var defaultColor = "RGB(255, 255, 255)";
-            // if (sectionComputedStyle.backgroundColor.toLowerCase() == defaultColor.toLowerCase()) {
-            //     hiddenCommentsSection.style.backgroundColor = getRandomColor();//"#b3cccc";
-            // } else {
-            //     hiddenCommentsSection.style.backgroundColor = "rgb(255, 255, 255)"
-            //     //event.stopPropagation();
-            // }
             if (event.target.tagName == "DIV"){
                 hiddenCommentsSection.style.newBackgroundColor = "#b3cccc"; 
             }
-            else {
+            else if (event.target.tagName == "P"){
                 hiddenCommentsSection.style.newBackgroundColor = getRandomColor();
                 if (hiddenCommentsSection.style.newBackgroundColor == "#ffffff")
                     event.stopPropagation();
             }
             hiddenCommentsSection.style.backgroundColor = hiddenCommentsSection.style.newBackgroundColor;
-            alert("div");
-            
-            
-            
+            if (commentsDisplayed == false)
+                alert("You've clicked on a DIV element");
         },
         true
     )
@@ -54,12 +49,18 @@ window.onload = function(){
             event.preventDefault();
             alert("This link is broken")
         }
-        )
+    )
+
+    // var hiddenSectionColor = document.getElementById("hidden_section_color");
+    // hiddenSectionColor.addEventListener(
+    //     'mouseover',
+    //     function(){
+    //         alert("The color is " + window.getComputedStyle(hiddenCommentsSection).backgroundColor);
+    //     }
+    //     )
     
-    
+     
 }
-
-
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -85,11 +86,11 @@ function getCommentsFromLocalStorage() {
 
 function postComment(){
     var main = document.getElementsByTagName("main")[0];
-
-    var inputText = main.children[3].value.trim();//document.getElementById("comment_input").value.trim();
+    var form = main.children[1];
+    var textarea = form.children[2]; 
+    var inputText = textarea.value.trim();//document.getElementById("comment_input").value.trim();
     var defaultMessage = "Write your opinion about my website here.";
 
-    ///e o problema ca la enter imi pune textul default in text area si apoi imi trece pe rand nou cu textul
 
     if (inputText != defaultMessage && inputText != ""){
 
@@ -182,12 +183,23 @@ function deleteComments(){
     }
 }
 
-function test()
-{
-    var arr = document.getElementsByClassName("comment");
-    var arrString = [];
-    for (let elem of arr){
-        console.log(JSON.stringify(elem))
+function changeColorDisplay (){
+    var display = document.getElementById("random_color_display");
+    let button = document.getElementById("random_color_display_btn")
+    if (randomColorDisplay == false) {
+        button.innerText = "Stop"
+        state = setInterval(function (display){
+            display.style.backgroundColor = getRandomColor();
+        }, 2000, display )
+        randomColorDisplay = true;
+    } else {
+        clearInterval(state);
+        randomColorDisplay = false;
+        button.innerText = "Show me random colors"
     }
-    
+}
+
+function alertColor(){
+    var button = document.getElementById("random_color_display")
+    alert("The color is: " + window.getComputedStyle(button).backgroundColor)
 }

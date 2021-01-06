@@ -1,12 +1,34 @@
 let(necesar),    (e facut ish)
 
-getComputedStyle
+Pentru partea de node din proiect trebuie ca sa creați un server sau mai multe, care sa primească cereri de tip get si post, cereri din form si cereri genereate cu obiecte de tip xmlHttpRequest, sa citească si sa scrie in fișiere json.
 
-event -proprietati(  
-      key/pageX)
 
-setInterval(cu >= 3 parametrii-necesar) ,  (nuj :) )
-clearInterval
+
+
+
+Cum primesc raspunsul pe aceeasi pagina? -> trimit formularul pe ruta cu numele paginii
+Cu trimit pagina de la server la browser
+
+
+GET:
+	- folosit ca sa iei date de pe server
+	- nu da refresh la pagina
+	- nu e sigura pentru ca datele sunt in link
+	- datele sunt vizibile din URL
+
+POST:
+	- folosit pentru a creea/updata date pe server
+	- da refresh la pagina
+	- e mai sigura decat GET
+	- datele nu sunt vizibile
+
+XMLHttpRequest
+	- il folosesc cand incarc cometariile de pe server
+	- ar trebui GET 
+
+
+Comentariile ascunse doar la trimit la server si atat, cand le afisez le iau din local storage
+
 
 
 

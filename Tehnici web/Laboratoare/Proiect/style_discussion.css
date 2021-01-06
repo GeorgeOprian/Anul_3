@@ -79,6 +79,80 @@ button {
     border-radius: 10px;
 }
 
-/* #display_comments {
-    margin-top:0px;
-} */
+#color_picker {
+    display: flex;
+    flex-direction: row;
+}
+
+#input {
+    align-self: center;
+    display: inline-block;
+}
+
+#output {
+    align-self: center;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.rgb {
+    height: 15px;
+    width: 255px;
+    margin-bottom: 10px;
+}
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+@media (max-width: 470px){
+    #color_picker {
+        flex-direction: column;
+    }
+}
+
+
+#hidden_section_color{
+    display: inline-block;
+}
+
+#random_color_display_generator{
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+}
+
+#random_color_display {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+#random_color_display_btn {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+#random_color_display_btn:hover {
+    cursor: default;
+}
