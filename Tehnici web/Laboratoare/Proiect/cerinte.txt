@@ -2,7 +2,8 @@ let(necesar),    (e facut ish)
 
 Pentru partea de node din proiect trebuie ca sa creați un server sau mai multe, care sa primească cereri de tip get si post, cereri din form si cereri genereate cu obiecte de tip xmlHttpRequest, sa citească si sa scrie in fișiere json.
 
-
+trimit cu post datele la sing up
+iau cu get numarul de logari pe care le-a facut userul
 
 
 
