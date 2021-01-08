@@ -26,22 +26,22 @@ function registerUser() {
         var password = document.getElementsByName("password")[0].value;
 
         newUser = { 'username': username, 'email': email, 'password': password }
-        
-        xmlRequest.onreadystatechange = function () {
-            alert(xmlRequest.responseText);
-        }
         var stringOb = JSON.stringify(newUser);
+
+        xmlRequest.setRequestHeader('Content-Type', 'text/html');
+        xmlRequest.responseType = 'text';
         xmlRequest.send(stringOb);
 
 
-
-        if (xmlRequest.readyState == 4) {
-            if (xmlRequest.status == 200) {
-                alert(xmlRequest.responseText);
-            } else {
-                alert("There were problems with the query");
-            }
-        } 
+        xmlRequest.onreadystatechange = function () {
+            if (xmlRequest.readyState == 4) {
+                if (xmlRequest.status == 200) {
+                    alert(xmlRequest.responseText);
+                } else {
+                    alert("There were problems with the query");
+                }
+            } 
+        }
         
     }
 

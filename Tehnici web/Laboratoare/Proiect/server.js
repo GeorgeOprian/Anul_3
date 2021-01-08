@@ -22,15 +22,21 @@ var server = http.createServer(
                 console.log(receivedUser);
                 //console.log(ob2);
 
+               var response = "ana are mere";
+                // if (tryToInsertNewUser(receivedUser) == false) {
+                //     response = "User already registered";
+                // } else {
+                //     response = "User registered successfully";
+                // }
+
+                console.log("response sent is: " + response);
+
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'text/html');
-               
-                if (tryToInsertNewUser(receivedUser) == false) {
-                    res.write("User already registered");
-                } else {
-                    res.write("User registered successfully");
-                }
+                res.write(response);
                 res.end();
+
+                
             })
         }
 
@@ -48,7 +54,7 @@ var server = http.createServer(
 
             var resStatus;
             resStatus = 404;
-                resString = "Could not find the user";
+                resString = "Problems at log in";
             if (listOfUsers != []) {
                 console.log(waitingUserToLogIn);
                 console.log(listOfUsers);
@@ -61,8 +67,11 @@ var server = http.createServer(
             }
             res.statusCode = resStatus;
             res.setHeader('Content-Type', 'text/html');
-            res.write("<h3>Response: </h3>\n" + resString);
+            var response = "<h3>Response: </h3>\n" + resString;
+            res.write(response);
+            console.log("response sent is: " + response);
             res.end();
+            
         }
     }
     ) 
@@ -78,15 +87,21 @@ console.log("Listening on port 8080")
 function tryToInsertNewUser (receivedUser) {
     var listOfUsers = [];
     console.log("try to register");
+    var fileEmpty = false;
     if (fs.existsSync("users.json")){
         var inputList = fs.readFileSync("users.json");
-        listOfUsers = JSON.parse(inputList);
+        if (inputList.length != 0)
+            listOfUsers = JSON.parse(inputList);
+        else 
+            fileEmpty = true;
     }
     
-    if (!isUserInDataBase (receivedUser, listOfUsers))
+    if (!isUserInDataBase (receivedUser, listOfUsers) || fileEmpty)
         listOfUsers.push(receivedUser);
     else {
-        console.log("register failed");
+        console.log("Register failed user already in data base");
+        console.log(receivedUser);
+
         return false;
     }
 
@@ -103,6 +118,8 @@ function isUserInDataBase (receivedUser, listOfUsers) {
             return true;
         }
     }
+
+    return false;
 }
 
 function userAndPasswordMatch(currentUser, requestedUser){
