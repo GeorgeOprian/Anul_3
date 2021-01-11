@@ -84,7 +84,7 @@ function getCommentsFromLocalStorage() {
     return JSON.parse(commentsListJSON);
 }
 
-function postComment(){
+function postCommentInPage(){
     var main = document.getElementsByTagName("main")[0];
     var form = main.children[1];
     var textarea = form.children[2]; 
@@ -106,7 +106,6 @@ function postComment(){
         else{
             saveCommentToLocalStorage (newComment);
         }
-
     }
 }
 

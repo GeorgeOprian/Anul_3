@@ -1,14 +1,14 @@
-
 window.onload = function () {
     var form = document.getElementsByTagName("form")[0];
     form.onsubmit = function (submit) {
         submit.preventDefault();
+        registerUser()
     }
 }
 
 function registerUser() {
     if (passwordsMatch()) {
-        //trimit cu post la /singUp
+
 
         var xmlRequest = new XMLHttpRequest();
 
@@ -17,7 +17,6 @@ function registerUser() {
             return false;
         }
         
-        newUser = null; 
         xmlRequest.open('POST', 'http://localhost:8080/sign_up', true);
 
         var form = document.getElementsByTagName("form")[0];
@@ -25,11 +24,9 @@ function registerUser() {
         var email = document.getElementsByName("email")[0].value;
         var password = document.getElementsByName("password")[0].value;
 
-        newUser = { 'username': username, 'email': email, 'password': password }
+        var newUser = { 'username': username, 'email': email, 'password': password }
         var stringOb = JSON.stringify(newUser);
 
-        xmlRequest.setRequestHeader('Content-Type', 'text/html');
-        xmlRequest.responseType = 'text';
         xmlRequest.send(stringOb);
 
 
@@ -38,7 +35,7 @@ function registerUser() {
                 if (xmlRequest.status == 200) {
                     alert(xmlRequest.responseText);
                 } else {
-                    alert("There were problems with the query");
+                    alert("xmlRequest.status = " + xmlRequest.status);
                 }
             } 
         }
@@ -55,5 +52,5 @@ function passwordsMatch() {
         return false;
     }
     return true;
-
 }
+

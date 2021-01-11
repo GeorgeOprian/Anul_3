@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require ('url');
 var fs = require('fs');
+var qs = require('querystring');
 
 var server = http.createServer(
     function(req, res){
@@ -15,26 +16,27 @@ var server = http.createServer(
             })
 
             req.on ('end', function (){
-                console.log("Am primit o cerere");
+                console.log("I received a query");
                 var receivedUser = JSON.parse(body);
+                //var receivedUser = qs.parse(body);
                 
-                console.log("ob1: ");
+                console.log("Received User: ");
                 console.log(receivedUser);
                 //console.log(ob2);
 
-               var response = "ana are mere";
-                // if (tryToInsertNewUser(receivedUser) == false) {
-                //     response = "User already registered";
-                // } else {
-                //     response = "User registered successfully";
-                // }
+               //var response = "ana are mere";
+                if (tryToInsertNewUser(receivedUser) == false) {
+                    response = "User already registered";
+                } else {
+                    response = "User registered successfully";
+                }
 
-                console.log("response sent is: " + response);
+                // console.log("response sent is: " + response);
 
                 res.statusCode = 200;
-                res.setHeader('Content-Type', 'text/html');
-                res.write(response);
-                res.end();
+                res.writeHead(200, {'Content-Type': 'text/plain','Access-Control-Allow-Origin': null});
+               // res.write();
+                res.end(response);
 
                 
             })
