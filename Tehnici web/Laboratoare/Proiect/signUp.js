@@ -19,12 +19,7 @@ function registerUser() {
         
         xmlRequest.open('POST', 'http://localhost:8080/sign_up', true);
 
-        var form = document.getElementsByTagName("form")[0];
-        var username = document.getElementsByName("username")[0].value;
-        var email = document.getElementsByName("email")[0].value;
-        var password = document.getElementsByName("password")[0].value;
-
-        var newUser = { 'username': username, 'email': email, 'password': password }
+        var newUser = createUser();
         var stringOb = JSON.stringify(newUser);
 
         xmlRequest.send(stringOb);
@@ -54,3 +49,14 @@ function passwordsMatch() {
     return true;
 }
 
+
+function createUser() {
+    
+    var username = document.getElementsByName("username")[0].value;
+    var email = document.getElementsByName("email")[0].value;
+    var password = document.getElementsByName("password")[0].value;
+    
+    var newUser = { 'username': username, 'email': email, 'password': password }
+
+    return newUser;
+}

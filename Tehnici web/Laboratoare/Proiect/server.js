@@ -1,7 +1,6 @@
 var http = require('http');
 var url = require ('url');
 var fs = require('fs');
-var qs = require('querystring');
 
 var server = http.createServer(
     function(req, res){
@@ -18,24 +17,19 @@ var server = http.createServer(
             req.on ('end', function (){
                 console.log("I received a query");
                 var receivedUser = JSON.parse(body);
-                //var receivedUser = qs.parse(body);
                 
                 console.log("Received User: ");
                 console.log(receivedUser);
-                //console.log(ob2);
 
-               //var response = "ana are mere";
                 if (tryToInsertNewUser(receivedUser) == false) {
                     response = "User already registered";
                 } else {
                     response = "User registered successfully";
                 }
 
-                // console.log("response sent is: " + response);
 
                 res.statusCode = 200;
                 res.writeHead(200, {'Content-Type': 'text/plain','Access-Control-Allow-Origin': null});
-               // res.write();
                 res.end(response);
 
                 
@@ -56,7 +50,7 @@ var server = http.createServer(
 
             var resStatus;
             resStatus = 404;
-                resString = "Problems at log in";
+                resString = "Problems when logging in";
             if (listOfUsers != []) {
                 console.log(waitingUserToLogIn);
                 console.log(listOfUsers);
@@ -81,10 +75,6 @@ var server = http.createServer(
 
 server.listen(8080);
 console.log("Listening on port 8080")
-
-
-// function insertUser()
-
 
 function tryToInsertNewUser (receivedUser) {
     var listOfUsers = [];

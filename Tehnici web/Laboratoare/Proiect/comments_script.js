@@ -22,7 +22,7 @@ window.onload = function(){
             
         }
     )
-    var hiddenCommentsSection = comments.parentElement;//document.getElementById("comments_section").nextElementSibling;
+    var hiddenCommentsSection = comments.parentElement;
     hiddenCommentsSection.addEventListener(
         'click',
         function(event){
@@ -50,14 +50,6 @@ window.onload = function(){
             alert("This link is broken")
         }
     )
-
-    // var hiddenSectionColor = document.getElementById("hidden_section_color");
-    // hiddenSectionColor.addEventListener(
-    //     'mouseover',
-    //     function(){
-    //         alert("The color is " + window.getComputedStyle(hiddenCommentsSection).backgroundColor);
-    //     }
-    //     )
     
      
 }
@@ -73,7 +65,6 @@ function getRandomColor() {
 
 function showHiddenComments(commentsList){
     var hiddenSection = document.getElementById("hidden_comments");
-    //ar merge ceva asemanator cu strcat
     for (let i = 0; i < commentsList.length; i++){
         hiddenSection.innerHTML += commentsList[i];
     }
@@ -88,7 +79,7 @@ function postCommentInPage(){
     var main = document.getElementsByTagName("main")[0];
     var form = main.children[1];
     var textarea = form.children[2]; 
-    var inputText = textarea.value.trim();//document.getElementById("comment_input").value.trim();
+    var inputText = textarea.value.trim();
     var defaultMessage = "Write your opinion about my website here.";
 
 
@@ -97,7 +88,6 @@ function postCommentInPage(){
         var newComment = createNewComment(inputText);
         
         //clear the textbox
-        //document.getElementById("comment_input").value = "";
         inputText = "";
         var post = document.getElementById("post");
         if (post.checked) {
