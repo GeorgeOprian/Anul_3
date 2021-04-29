@@ -5,6 +5,7 @@ import pdb
 
 ADANCIME_MAX = 6
 
+jucator_curent = ""
 
 def elem_identice(lista):
     if (all(elem == lista[0] for elem in lista[1:])):
@@ -21,6 +22,9 @@ class Joc:
     JMAX = None
     GOL = '#'
     NR_LINII = 10
+
+    SCOR_X = 0
+    SCOR_0 = 0
 
     @classmethod
     def initializeaza(cls, display, NR_COLOANE=10, dim_celula=50):
@@ -48,16 +52,14 @@ class Joc:
                 # altfel o desenez cu alb
                 culoare = (255, 255, 255)
             if self.l_jum1piesa != -1 and self.c_jum1piesa != -1 and ind == (Joc.NR_LINII * self.l_jum1piesa + self.c_jum1piesa):
-                culoare = (111, 191, 132) #daca am plasat jumatate de piesa colorez cu verde deschis
+                culoare = (111, 191, 132) #daca am plasat jumatate de piesa colorez jumatatea de piesa cu verde deschis
 
             if (self.l_jum1piesa != -1 and self.c_jum1piesa != -1) and (self.matr[ind] == self.__class__.GOL) \
                 and (ind == (self.l_jum1piesa - 1) * Joc.NR_COLOANE + self.c_jum1piesa - 1
                 or ind == (self.l_jum1piesa - 1) * Joc.NR_COLOANE + self.c_jum1piesa + 1
                 or ind == (self.l_jum1piesa + 1) * Joc.NR_COLOANE + self.c_jum1piesa + 1
                 or ind == (self.l_jum1piesa - 1) * Joc.NR_COLOANE + self.c_jum1piesa + 1):
-                culoare = (0, 255, 0)
-
-            # coloreaza vecinii cu verde
+                culoare = (0, 255, 0) # coloreaza vecinii cu verde
 
             pygame.draw.rect(self.__class__.display, culoare, self.__class__.celuleGrid[ind])  # alb = (255,255,255)
             if self.matr[ind] == 'x':
@@ -82,8 +84,7 @@ class Joc:
         self.l_jum1piesa = -1
         self.c_jum1piesa = -1
 
-        self.scor_x = 0
-        self.scor_0 = 0
+
 
     @classmethod
     def jucator_opus(cls, jucator):
@@ -114,7 +115,9 @@ class Joc:
                     coloana_i = i % 10
                     linie_j = j // 10
                     coloana_j = j % 10
-                    if self.mutare_valida(linie_i, coloana_i) and self.pot_completa_placuta(linie_i, coloana_i, linie_j, coloana_j):
+                    if (self.matr[i] == Joc.GOL and self.matr[j] == Joc.GOL) \
+                            and self.mutare_valida(linie_i, coloana_i) \
+                            and self.pot_completa_placuta(linie_i, coloana_i, linie_j, coloana_j):
                         matr_tabla_noua = list(self.matr) #fac o copie a matricei
                         matr_tabla_noua[i] = jucator_opus
                         matr_tabla_noua[j] = jucator_opus
@@ -145,53 +148,56 @@ class Joc:
         final = self.final()
         self.calculeaza_scor()
         if final:
-            if self.scor_x == self.scor_0:
+            if Joc.SCOR_X == Joc.SCOR_0:
                 t_final = "remiza"
-            elif self.scor_x > self.scor_0:
+            elif Joc.SCOR_X > Joc.SCOR_0:
                 t_final = 'x'
             else:
                 t_final = '0'
-        if t_final == self.__class__.JMAX:
-            return (99 + adancime)
-        elif t_final == self.__class__.JMIN:
-            return (-99 - adancime)
-        elif t_final == 'remiza':
-            return 0
+            if t_final == self.__class__.JMAX:
+                return (99 + adancime)
+            elif t_final == self.__class__.JMIN:
+                return (-99 - adancime)
+            elif t_final == 'remiza':
+                return 0
         elif self.__class__.JMAX == 'x':
-            return self.scor_x - self.scor_0
+            return Joc.SCOR_X - Joc.SCOR_0
         else:
-            return self.scor_0 - self.scor_x
+            return Joc.SCOR_0 - Joc.SCOR_X
 
             # o folosim la a doua estimare
             # return (self.linii_deschise(self.__class__.JMAX) - self.linii_deschise(self.__class__.JMIN))
 
     def calculeaza_scor(self):
-        self.scor_x = 0
-        self.scor_0 = 0
+        Joc.SCOR_X = 0
+        Joc.SCOR_0 = 0
+
+        # print("calculatorul estimeaza scorul")
         for i in range(Joc.NR_LINII):
             for j in range(Joc.NR_COLOANE):
+
                 if self.matr[i * Joc.NR_COLOANE + j] != self.__class__.GOL and \
                         (j <= (Joc.NR_COLOANE - 3) and self.matr[i * Joc.NR_COLOANE + j] == self.matr[i * Joc.NR_COLOANE + j + 1]
                          and self.matr[i * Joc.NR_COLOANE + j + 1] == self.matr[i * Joc.NR_COLOANE + j + 2]):
                     # print ("intra pe primul if in calculeaza scor i = {} j = {} si testeaza {} {} {}".format(i, j, self.matr[i * Joc.NR_COLOANE + j], self.matr[i * Joc.NR_COLOANE + j + 1], self.matr[i * Joc.NR_COLOANE + j + 2] ))
                     if self.matr[i * Joc.NR_COLOANE + j] == 'x':
-                        self.scor_x += 1
+                        Joc.SCOR_X += 1
                     if self.matr[i * Joc.NR_COLOANE + j] == '0':
-                        self.scor_0 += 1
+                        Joc.SCOR_0 += 1
                 elif self.matr[i * Joc.NR_COLOANE + j] != self.__class__.GOL and \
                         (i <= (Joc.NR_COLOANE - 3) and self.matr[i * Joc.NR_COLOANE + j] == self.matr[i * Joc.NR_COLOANE + j + Joc.NR_COLOANE]
                          and self.matr[i * Joc.NR_COLOANE + j + Joc.NR_COLOANE] == self.matr[i * Joc.NR_COLOANE + j + 2 * Joc.NR_COLOANE]):
                     # print("intra pe al doilea if in calculeaza scor i = {} j = {} si testeaaza {} {} {}".format(i, j, self.matr[i * Joc.NR_COLOANE + j], self.matr[i * Joc.NR_COLOANE + j + Joc.NR_COLOANE], self.matr[i * Joc.NR_COLOANE + j + 2 * Joc.NR_COLOANE]))
                     if self.matr[i * Joc.NR_COLOANE + j] == 'x':
-                        self.scor_x += 1
+                        Joc.SCOR_X += 1
                     if self.matr[i * Joc.NR_COLOANE + j] == '0':
-                        self.scor_0 += 1
-
+                        Joc.SCOR_0 += 1
+        # print("calculatorul a terminat de estimat")
 
     def afiseaza_scor(self):
         print("Scor:")
-        print("X: {}".format(self.scor_x))
-        print("0: {}".format(self.scor_0))
+        print("X: {}".format(Joc.SCOR_X))
+        print("0: {}".format(Joc.SCOR_0))
         print("###########################################")
 
     def __str__(self):
@@ -223,21 +229,46 @@ class Joc:
     def obtine_lista_vecini (self, linie, coloana):
         lista_vecini = []
         #pe linii
-        # verificari la pentru margini
+        # verificari la margini
+        try:
+            if ((linie + 1) * Joc.NR_COLOANE + coloana) < 100:
+                iv_stanga = (linie * Joc.NR_COLOANE + coloana - 1)
+                if iv_stanga % 10 != 0:
+                    lista_vecini.append(self.matr[iv_stanga])  # vecin stanga
 
-        lista_vecini.append(self.matr[linie * Joc.NR_COLOANE + coloana - 1]) #vecin stanga
-        lista_vecini.append(self.matr[linie * Joc.NR_COLOANE + coloana + 1])  # vecin dreapta
-        #pe coloane
-        lista_vecini.append(self.matr[(linie - 1) * Joc.NR_COLOANE + coloana]) #vecin deasupra
-        lista_vecini.append(self.matr[(linie + 1) * Joc.NR_COLOANE + coloana]) #vecin dedesubt
-        #pe diagonale
-        lista_vecini.append(self.matr[(linie - 1) * Joc.NR_COLOANE + coloana - 1]) #stanga sus
-        lista_vecini.append(self.matr[(linie - 1) * Joc.NR_COLOANE + coloana + 1]) #dreapta sus
+                iv_stanga_sus = ((linie - 1) * Joc.NR_COLOANE + coloana - 1)
+                if iv_stanga_sus % 10 != 0 and iv_stanga_sus > 9:
+                    lista_vecini.append(self.matr[iv_stanga_sus])  # stanga sus
 
-        lista_vecini.append(self.matr[(linie + 1) * Joc.NR_COLOANE + coloana + 1]) #dreapta jos
-        lista_vecini.append(self.matr[(linie + 1) * Joc.NR_COLOANE + coloana - 1]) #stanga jos
+                iv_deasupra = ((linie - 1) * Joc.NR_COLOANE + coloana)
+                if iv_deasupra > 9:
+                    lista_vecini.append(self.matr[iv_deasupra])  # vecin deasupra
 
+                iv_dreapta_sus = ((linie - 1) * Joc.NR_COLOANE + coloana + 1)
+                if iv_dreapta_sus % 10 != 9 and iv_dreapta_sus > 9:
+                    lista_vecini.append(self.matr[iv_dreapta_sus])  # dreapta sus
 
+                iv_dreapta = linie * Joc.NR_COLOANE + coloana + 1
+                if iv_dreapta % 10 != 9:
+                    lista_vecini.append(self.matr[iv_dreapta])  # vecin dreapta
+
+                iv_dreapta_jos = ((linie + 1) * Joc.NR_COLOANE + coloana + 1)
+                if iv_dreapta_jos % 10 != 9 and iv_dreapta_jos < 90:
+                    lista_vecini.append(self.matr[iv_dreapta_jos])  # dreapta jos
+
+                iv_dedesubt = ((linie + 1) * Joc.NR_COLOANE + coloana)
+                if iv_dedesubt < 90:
+                    lista_vecini.append(self.matr[iv_dedesubt]) #vecin dedesubt
+
+                iv_stanga_jos = ((linie + 1) * Joc.NR_COLOANE + coloana - 1)
+                if iv_stanga_jos % 10 != 0 and iv_stanga_jos < 90:
+                    lista_vecini.append(self.matr[iv_stanga_jos]) #stanga jos
+        except:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            exc_line = exc_tb.tb_lineno
+            print("a generat exceptie")
+        if jucator_curent == 'x':
+            print("linie {} coloana {} lista vecini {}".format(linie, coloana, lista_vecini))
         return lista_vecini
 
 
@@ -300,6 +331,7 @@ class Stare:
 
 
 def min_max(stare):
+
     if stare.adancime == 0 or stare.tabla_joc.final():
         stare.estimare = stare.tabla_joc.estimeaza_scor(stare.adancime)
         return stare
@@ -368,16 +400,17 @@ def alpha_beta(alpha, beta, stare):
 def afis_daca_final(stare_curenta):
     #afisari frumoase cu timpi si nebunii
     final = stare_curenta.tabla_joc.final()
-    # if (final):
-    #     if (final == "remiza"):
-    #         print("Remiza!")
-    #     else:
-    #         print("A castigat " + final)
-    #
-    #     return True
+    if (final):
+        if (final == "remiza"):
+            print("Remiza!")
+        else:
+            if Joc.SCOR_X > Joc.SCOR_0:
+                print("A castigat x")
+            else:
+                print("A castigat 0")
+        return True
 
     return False
-
 
 
 
@@ -398,7 +431,7 @@ def main():
     #         raspuns_valid = True
     #     else:
     #         print("Raspunsul trebuie sa fie x sau 0.")
-    tip_algoritm = 1
+    tip_algoritm = '1'
     Joc.JMIN = 'x'
 
     Joc.JMAX = '0' if Joc.JMIN == 'x' else 'x'
@@ -409,7 +442,9 @@ def main():
     print(str(tabla_curenta))
 
     # creare stare initiala
-    stare_curenta = Stare(tabla_curenta, 'x', ADANCIME_MAX)
+    # stare_curenta = Stare(tabla_curenta, 'x', ADANCIME_MAX)
+    adancime = 1
+    stare_curenta = Stare(tabla_curenta, 'x', adancime)
 
     # setari interf grafica
     pygame.init()
@@ -467,40 +502,43 @@ def main():
                                     de_mutat = False
                                 # plasez simbolul pe "tabla de joc"
                                 # print("plasez piesa pe linia {} si coloana {} adica index {}".format(linie, coloana,linie * 10 + coloana))
-                                if jum_piesa_plasata is False and tabla_curenta.mutare_valida(linie, coloana):
+                                if jum_piesa_plasata is False and stare_curenta.tabla_joc.mutare_valida(linie, coloana):
                                     stare_curenta.tabla_joc.matr[linie * 10 + coloana] = Joc.JMIN
-
                                     linie_jum_piesa = linie
                                     coloana_jum_piesa = coloana
-                                    tabla_curenta.l_jum1piesa = linie #colorez celula in care am plasat
-                                    tabla_curenta.c_jum1piesa = coloana
+                                    stare_curenta.tabla_joc.l_jum1piesa = linie #colorez celula in care am plasat
+                                    stare_curenta.tabla_joc.c_jum1piesa = coloana
                                     jum_piesa_plasata = True
 
                                 elif jum_piesa_plasata is True \
-                                        and tabla_curenta.pot_completa_placuta(linie_jum_piesa, coloana_jum_piesa,
+                                        and stare_curenta.tabla_joc.pot_completa_placuta(linie_jum_piesa, coloana_jum_piesa,
                                                                                linie, coloana):
                                     stare_curenta.tabla_joc.matr[linie * 10 + coloana] = Joc.JMIN
                                     linie_jum_piesa = -1
                                     coloana_jum_piesa = -1
-                                    tabla_curenta.l_jum1piesa = -1  # decolorez celula care cand am piesa completa
-                                    tabla_curenta.c_jum1piesa = -1
+                                    stare_curenta.tabla_joc.l_jum1piesa = -1  # decolorez celula care cand am piesa completa
+                                    stare_curenta.tabla_joc.c_jum1piesa = -1
                                     jum_piesa_plasata = False
 
-                                    tabla_curenta.calculeaza_scor() #calculez scorul dupa ce am facut o mutare valida
+                                    stare_curenta.tabla_joc.calculeaza_scor() #calculez scorul dupa ce am facut o mutare valida
 
-                                # stare_curenta.tabla_joc.matr[linie*3+coloana]=Joc.JMIN
+                                    # stare_curenta.tabla_joc.matr[linie*3+coloana]=Joc.JMIN
 
-                                # afisarea starii jocului in urma mutarii utilizatorului
-                                print("\nTabla dupa mutarea jucatorului")
-                                print(str(stare_curenta))
+                                    # afisarea starii jocului in urma mutarii utilizatorului
+                                    print("\nTabla dupa mutarea jucatorului")
+                                    print(str(stare_curenta))
+
+                                    # testez daca jocul a ajuns intr-o stare finala
+                                    # si afisez un mesaj corespunzator in caz ca da
+                                    if (afis_daca_final(stare_curenta)):
+                                        break
+
+                                    # S-a realizat o mutare. Schimb jucatorul cu cel opus
+                                    stare_curenta.j_curent = Joc.jucator_opus(stare_curenta.j_curent)
+                                    jucator_curent = Joc.jucator_opus(stare_curenta.j_curent)
                                 stare_curenta.tabla_joc.deseneaza_grid()
-                                # testez daca jocul a ajuns intr-o stare finala
-                                # si afisez un mesaj corespunzator in caz ca da
-                                if (afis_daca_final(stare_curenta)):
-                                    break
 
-                                # S-a realizat o mutare. Schimb jucatorul cu cel opus
-                                stare_curenta.j_curent = Joc.jucator_opus(stare_curenta.j_curent)
+
 
 
         # --------------------------------
@@ -511,25 +549,26 @@ def main():
 
             #comentat pentru setari
 
-            # t_inainte = int(round(time.time() * 1000))
-            # if tip_algoritm == '1':
-            #     stare_actualizata = min_max(stare_curenta)
-            # else:  # tip_algoritm==2
-            #     stare_actualizata = alpha_beta(-500, 500, stare_curenta)
-            # stare_curenta.tabla_joc = stare_actualizata.stare_aleasa.tabla_joc
-            # print("Tabla dupa mutarea calculatorului")
-            # print(str(stare_curenta))
-            #
-            # stare_curenta.tabla_joc.deseneaza_grid()
-            # # preiau timpul in milisecunde de dupa mutare
-            # t_dupa = int(round(time.time() * 1000))
-            # print("Calculatorul a \"gandit\" timp de " + str(t_dupa - t_inainte) + " milisecunde.")
-            #
-            # if (afis_daca_final(stare_curenta)):
-            #     break
-            #
+            t_inainte = int(round(time.time() * 1000))
+            if tip_algoritm == '1':
+                stare_actualizata = min_max(stare_curenta)
+            else:  # tip_algoritm==2
+                stare_actualizata = alpha_beta(-500, 500, stare_curenta)
+            stare_curenta.tabla_joc = stare_actualizata.stare_aleasa.tabla_joc
+            print("Tabla dupa mutarea calculatorului")
+            print(str(stare_curenta))
+
+            stare_curenta.tabla_joc.deseneaza_grid()
+            # preiau timpul in milisecunde de dupa mutare
+            t_dupa = int(round(time.time() * 1000))
+            print("Calculatorul a \"gandit\" timp de " + str(t_dupa - t_inainte) + " milisecunde.")
+
+            if (afis_daca_final(stare_curenta)):
+                break
+
             # # S-a realizat o mutare. Schimb jucatorul cu cel opus
             stare_curenta.j_curent = Joc.jucator_opus(stare_curenta.j_curent)
+            jucator_curent = Joc.jucator_opus(stare_curenta.j_curent)
             print("muta jucatorul")
 
 
